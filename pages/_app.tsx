@@ -1,8 +1,14 @@
-import '../styles/globals.css'
-import type { AppProps } from 'next/app'
+import type { AppProps } from 'next/app';
+import { extendTheme } from '@chakra-ui/react';
 
-function MyApp({ Component, pageProps }: AppProps) {
-  return <Component {...pageProps} />
+const theme = extendTheme({
+  fonts: {
+    heading: `Futura 'Open Sans', sans-serif`,
+  },
+});
+
+function App({ Component, pageProps }: AppProps) {
+  return <Component {...pageProps} theme={theme} />;
 }
 
-export default MyApp
+export default App;
