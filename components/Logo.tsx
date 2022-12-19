@@ -10,6 +10,7 @@ const Logo: FC<Props> = (props) => {
       width="451.19px"
       height="73.26px"
       viewBox="0 0 451.19 73.26"
+      fill="white"
       {...props}
     >
       <desc>Itta&apos;s Portfolio</desc>
