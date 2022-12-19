@@ -2,6 +2,13 @@ import { ChakraProvider, extendTheme } from '@chakra-ui/react';
 import type { AppProps } from 'next/app';
 
 const theme = extendTheme({
+  components: {
+    Text: {
+      baseStyle: {
+        my: 2,
+      },
+    },
+  },
   styles: {
     global: () => ({
       body: {
