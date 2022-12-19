@@ -1,4 +1,5 @@
 import { Box, Container, Heading, Text } from '@chakra-ui/react';
+import ContentGroup from 'components/ContentGroup';
 import type { NextPage } from 'next';
 import Head from 'next/head';
 import Logo from 'components/Logo';
@@ -15,19 +16,18 @@ const Home: NextPage = () => {
           <Logo mx="auto" />
         </Box>
         <Box as="main" mt={8}>
-          <Heading as="h2" fontWeight="extrabold" fontSize="3xl" mb={3}>
-            About
-          </Heading>
-          <Text fontWeight="bold" mb={5}>
-            船橋一汰 Itta Funahashi
-          </Text>
-          <Text>14 y/o</Text>
-          <Text>
-            Reactを書いています。 Rust勉強中です...
-            <br />
-            UI/UXに興味があります。
-          </Text>
-          <Text mt={3}>chottodekiru: TS / React / Next.js / Blender</Text>
+          <ContentGroup title="About">
+            <Text fontWeight="bold" mb={5}>
+              船橋一汰 Itta Funahashi
+            </Text>
+            <Text>14 y/o</Text>
+            <Text>
+              Reactを書いています。 Rust勉強中です...
+              <br />
+              UI/UXに興味があります。
+            </Text>
+            <Text mt={3}>chottodekiru: TS / React / Next.js / Blender</Text>
+          </ContentGroup>
         </Box>
       </Container>
     </Box>
