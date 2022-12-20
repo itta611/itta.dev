@@ -1,4 +1,4 @@
-import { ChakraProvider, extendTheme } from '@chakra-ui/react';
+import { ChakraProvider, ColorModeScript, extendTheme, ThemeConfig } from '@chakra-ui/react';
 import type { AppProps } from 'next/app';
 
 const theme = extendTheme({
@@ -9,6 +9,10 @@ const theme = extendTheme({
       },
     },
   },
+  config: {
+    initialColorMode: 'dark',
+    useSystemColorMode: false,
+  } as ThemeConfig,
   styles: {
     global: () => ({
       body: {
