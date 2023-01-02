@@ -1,34 +1,30 @@
-import { ApolloServer, gql } from 'apollo-server-micro';
-import type { NextApiRequest, NextApiResponse } from 'next';
+import { NextApiRequest, NextApiResponse } from 'next';
+import { ApolloServer } from 'apollo-server-micro';
+import { readFileSync } from 'fs';
+import { join } from 'path';
 
-const typeDefs = gql`
-  type Query {
-    hello: String
-  }
-`;
+import { Resolvers } from '../../graphql/dist/generated-server';
 
-const resolvers = {
+const path = join(process.cwd(), 'graphql', 'schema.graphql');
+const typeDefs = readFileSync(path).toString('utf-8');
+
+const users = [
+  { id: '1', name: 'Alice' },
+  { id: '2', name: 'Bob' },
+  { id: '3', name: 'Carol' },
+];
+
+const resolvers: Resolvers = {
   Query: {
-    hello: () => 'Hello World',
+    users: () => users,
   },
 };
 
-const apolloServer = new ApolloServer({
-  typeDefs,
-  resolvers,
-});
+const apolloServer = new ApolloServer({ typeDefs, resolvers });
 
 const startServer = apolloServer.start();
 
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
-  res.setHeader('Access-Control-Allow-Credentials', 'true');
-  res.setHeader('Access-Control-Allow-Origin', 'https://studio.apollographql.com');
-  res.setHeader('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept');
-  if (req.method === 'OPTIONS') {
-    res.end();
-    return false;
-  }
-
   await startServer;
   await apolloServer.createHandler({
     path: '/api/graphql',
