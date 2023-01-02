@@ -1,5 +1,5 @@
 import { Box, Code, Container, Text } from '@chakra-ui/react';
-import { ContentGroup, NormalContent, APIContent } from 'components/ContentGroup';
+import { ContentGroup } from 'components/ContentGroup';
 import type { NextPage } from 'next';
 import Head from 'next/head';
 import Logo from 'components/Logo';
@@ -17,21 +17,16 @@ const Home: NextPage = () => {
         </Box>
         <Box as="main" mt={8}>
           <ContentGroup title="About">
-            <NormalContent>
-              <Text fontWeight="bold" mb={5}>
-                船橋一汰 Itta Funahashi
-              </Text>
-              <Text>14 y/o</Text>
-              <Text>
-                Reactを書いています。 Rust勉強中です...
-                <br />
-                UI/UXに興味があります。
-              </Text>
-            </NormalContent>
+            <Text fontWeight="bold" mb={5}>
+              船橋一汰 Itta Funahashi
+            </Text>
+            <Text>14 y/o</Text>
+            <Text>
+              Reactを書いています。 Rust勉強中です...
+              <br />
+              UI/UXに興味があります。
+            </Text>
             <Text mt={3}>chottodekiru: TS / React / Next.js / Blender</Text>
-            <APIContent display="hidden">
-              <Code>https://itta.dev/api/profile</Code>
-            </APIContent>
           </ContentGroup>
         </Box>
       </Container>
