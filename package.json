@@ -3,10 +3,12 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
+    "dev": "concurrently \"npm run generate-client --watch\" \"npm run generate-server --watch\" \"next dev\"",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "generate-client": "graphql-codegen --config graphql/codegen-server.yaml",
+    "generate-server": "graphql-codegen --config graphql/codegen-client.yaml"
   },
   "dependencies": {
     "@apollo/client": "^3.7.3",
@@ -20,6 +22,7 @@
     "@graphql-codegen/typescript-resolvers": "^2.7.11",
     "@tabler/icons": "^1.117.0",
     "apollo-server-micro": "^3.11.1",
+    "concurrently": "^7.6.0",
     "framer-motion": "^7.10.2",
     "graphql": "^16.6.0",
     "micro": "^9.4.1",
