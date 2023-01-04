@@ -32,7 +32,7 @@ const Home: NextPage = () => {
             <Text mt={3}>chottodekiru: TS / React / Next.js / Blender</Text>
           </ContentGroup>
           <ContentGroup title="Certificates / Awards">
-            <UnorderedList>
+            <UnorderedList mt={2}>
               <ListItemWrap>英検２級</ListItemWrap>
               <ListItemWrap>
                 U-22 プログラミング・コンテスト 2020 経済産業省商務政策局長賞 受賞
