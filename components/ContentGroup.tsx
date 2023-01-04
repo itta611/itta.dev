@@ -6,7 +6,7 @@ export interface ContentGroupProps extends ChakraProps {
   children: ReactNode;
 }
 
-export const ContentGroup: FC<ContentGroupProps> = ({ title, children, ...chakraProps }) => {
+const ContentGroup: FC<ContentGroupProps> = ({ title, children, ...chakraProps }) => {
   return (
     <Box as="article" position="relative" mt={10} {...chakraProps}>
       <Heading as="h2" fontWeight="extrabold" fontSize="3xl" mb={3}>
@@ -16,3 +16,5 @@ export const ContentGroup: FC<ContentGroupProps> = ({ title, children, ...chakra
     </Box>
   );
 };
+
+export default ContentGroup;

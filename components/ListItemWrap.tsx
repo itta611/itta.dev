@@ -1,7 +1,7 @@
 import { ListItem } from '@chakra-ui/react';
 import { FC } from 'react';
 
-interface ListItemWrapProps {
+export interface ListItemWrapProps {
   children: React.ReactNode;
 }
 
