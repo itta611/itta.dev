@@ -31,6 +31,7 @@ const Home: NextPage = () => {
           </ContentGroup>
           <ContentGroup title="Certificates">
             <UnorderedList>
+              <ListItemWrap>英検２級</ListItemWrap>
               <ListItemWrap>
                 U-22 プログラミング・コンテスト 2020 経済産業省商務政策局長賞 受賞
               </ListItemWrap>
