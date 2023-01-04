@@ -1,9 +1,11 @@
-import { Box, Code, Container, Grid, ListItem, Text, UnorderedList } from '@chakra-ui/react';
+import { Box, Button, Container, Text, UnorderedList, VStack } from '@chakra-ui/react';
 import ContentGroup from 'components/ContentGroup';
 import type { NextPage } from 'next';
 import Head from 'next/head';
 import Logo from 'components/Logo';
 import ListItemWrap from 'components/ListItemWrap';
+import Link from 'next/link';
+import { IconBrandGithub, IconBrandTwitter, IconCode } from '@tabler/icons';
 
 const Home: NextPage = () => {
   return (
@@ -29,7 +31,7 @@ const Home: NextPage = () => {
             </Text>
             <Text mt={3}>chottodekiru: TS / React / Next.js / Blender</Text>
           </ContentGroup>
-          <ContentGroup title="Certificates">
+          <ContentGroup title="Certificates / Awards">
             <UnorderedList>
               <ListItemWrap>英検２級</ListItemWrap>
               <ListItemWrap>
@@ -37,6 +39,19 @@ const Home: NextPage = () => {
               </ListItemWrap>
               <ListItemWrap>U-22 プログラミング・コンテスト 2021 経済産業大臣賞 受賞</ListItemWrap>
             </UnorderedList>
+          </ContentGroup>
+          <ContentGroup title="Links">
+            <VStack>
+              <Link href="https://github.com/itta611">
+                <Button leftIcon={<IconBrandGithub />}>@itta611</Button>
+              </Link>
+              <Link href="https://twitter.com/IttaFunahashi">
+                <Button leftIcon={<IconBrandTwitter />}>@IttaFunahashi</Button>
+              </Link>
+              <Link href="https://github.com/itta611/itta-portfolio">
+                <Button leftIcon={<IconCode />}>Source Code</Button>
+              </Link>
+            </VStack>
           </ContentGroup>
         </Box>
       </Container>
