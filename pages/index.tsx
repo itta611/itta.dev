@@ -6,8 +6,11 @@ import Logo from 'components/Logo';
 import ListItemWrap from 'components/ListItemWrap';
 import Link from 'next/link';
 import { IconBrandGithub, IconBrandTwitter, IconCode } from '@tabler/icons';
+import { Playground } from 'graphql-playground-react';
+import GraphQLPlayground from 'components/GraphQLPlayground';
 
 const Home: NextPage = () => {
+  console.log(process.env.NEXT_PUBLIC_API_URL);
   return (
     <Box bg="gray.800" color="white" minH="100vh">
       <Container maxW="container.md" pb={20}>
@@ -54,7 +57,7 @@ const Home: NextPage = () => {
             </VStack>
           </ContentGroup>
           <ContentGroup title="Playground">
-            <Textarea placeholder="TypeScript" />
+            <GraphQLPlayground endpoint={process.env.NEXT_PUBLIC_API_URL} />
           </ContentGroup>
         </Box>
       </Container>
