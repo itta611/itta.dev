@@ -1,4 +1,4 @@
-import { Box, Button, Container, Text, UnorderedList, VStack } from '@chakra-ui/react';
+import { Box, Button, Container, Text, Textarea, UnorderedList, VStack } from '@chakra-ui/react';
 import ContentGroup from 'components/ContentGroup';
 import type { NextPage } from 'next';
 import Head from 'next/head';
@@ -10,7 +10,7 @@ import { IconBrandGithub, IconBrandTwitter, IconCode } from '@tabler/icons';
 const Home: NextPage = () => {
   return (
     <Box bg="gray.800" color="white" minH="100vh">
-      <Container maxW="container.md">
+      <Container maxW="container.md" pb={20}>
         <Head>
           <title>Itta&apos;s Portfolio</title>
           <link rel="icon" href="/favicon.ico" />
@@ -32,7 +32,7 @@ const Home: NextPage = () => {
             <Text mt={3}>chottodekiru: TypeScript / React / Next.js / Blender</Text>
           </ContentGroup>
           <ContentGroup title="Certificates / Awards">
-            <UnorderedList mt={2}>
+            <UnorderedList>
               <ListItemWrap>英検２級</ListItemWrap>
               <ListItemWrap>
                 U-22 プログラミング・コンテスト 2020 経済産業省商務政策局長賞 受賞
@@ -52,6 +52,9 @@ const Home: NextPage = () => {
                 <Button leftIcon={<IconCode />}>Source Code</Button>
               </Link>
             </VStack>
+          </ContentGroup>
+          <ContentGroup title="Playground">
+            <Textarea placeholder="TypeScript" />
           </ContentGroup>
         </Box>
       </Container>
