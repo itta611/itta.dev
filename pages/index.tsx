@@ -1,4 +1,13 @@
-import { Box, Button, Container, Text, Textarea, UnorderedList, VStack } from '@chakra-ui/react';
+import {
+  Box,
+  Button,
+  Container,
+  HStack,
+  Text,
+  Textarea,
+  UnorderedList,
+  VStack,
+} from '@chakra-ui/react';
 import ContentGroup from 'components/ContentGroup';
 import type { NextPage } from 'next';
 import Head from 'next/head';
@@ -8,9 +17,9 @@ import Link from 'next/link';
 import { IconBrandGithub, IconBrandTwitter, IconCode } from '@tabler/icons';
 import { Playground } from 'graphql-playground-react';
 import GraphQLPlayground from 'components/GraphQLPlayground';
+import DinamicShadowImage from 'components/DinamicShadowImage';
 
 const Home: NextPage = () => {
-  console.log(process.env.NEXT_PUBLIC_API_URL);
   return (
     <Box bg="gray.800" color="white" minH="100vh">
       <Container maxW="container.md" pb={20}>
@@ -23,16 +32,21 @@ const Home: NextPage = () => {
         </Box>
         <Box as="main" mt={8}>
           <ContentGroup title="About">
-            <Text fontWeight="bold" mb={5}>
-              船橋一汰 Itta Funahashi
-            </Text>
-            <Text>14 y/o</Text>
-            <Text>
-              Reactを書いています。 Rust勉強中です...
-              <br />
-              UI/UXに興味があります。
-            </Text>
-            <Text mt={3}>chottodekiru: TypeScript / React / Next.js / Blender</Text>
+            <HStack justifyContent="space-between" alignContent="center">
+              <Box>
+                <Text fontWeight="bold" mb={5}>
+                  船橋一汰 Itta Funahashi
+                </Text>
+                <Text>14 y/o</Text>
+                <Text>
+                  Reactを書いています。 Rust勉強中です...
+                  <br />
+                  UI/UXに興味があります。
+                </Text>
+                <Text mt={3}>chottodekiru: TypeScript / React / Next.js / Blender</Text>
+              </Box>
+              <DinamicShadowImage src="/img/icon.jpg" width={170} height={170} alt="Icon" />
+            </HStack>
           </ContentGroup>
           <ContentGroup title="Certificates / Awards">
             <UnorderedList>
