@@ -29,7 +29,7 @@ const Home: NextPage = () => {
               <br />
               UI/UXに興味があります。
             </Text>
-            <Text mt={3}>chottodekiru: TS / React / Next.js / Blender</Text>
+            <Text mt={3}>chottodekiru: TypeScript / React / Next.js / Blender</Text>
           </ContentGroup>
           <ContentGroup title="Certificates / Awards">
             <UnorderedList mt={2}>
@@ -43,10 +43,10 @@ const Home: NextPage = () => {
           <ContentGroup title="Links">
             <VStack>
               <Link href="https://github.com/itta611">
-                <Button leftIcon={<IconBrandGithub />}>@itta611</Button>
+                <Button leftIcon={<IconBrandGithub />}>GitHub: @itta611</Button>
               </Link>
               <Link href="https://twitter.com/IttaFunahashi">
-                <Button leftIcon={<IconBrandTwitter />}>@IttaFunahashi</Button>
+                <Button leftIcon={<IconBrandTwitter />}>Twitter: @IttaFunahashi</Button>
               </Link>
               <Link href="https://github.com/itta611/itta-portfolio">
                 <Button leftIcon={<IconCode />}>Source Code</Button>
