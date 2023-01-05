@@ -14,7 +14,7 @@ const ContentGroup: FC<ContentGroupProps> = ({ title, children, ...chakraProps }
         fontWeight="extrabold"
         fontSize="3xl"
         mb={4}
-        display="inline"
+        display="inline-block"
         position="relative"
         _before={{
           content: '""',
