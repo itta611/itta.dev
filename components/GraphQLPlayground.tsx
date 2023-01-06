@@ -27,6 +27,11 @@ const GraphQLPlayground = dynamic<any>(
               executeButtonBorder: '#1A202C',
               button: '#1A202C',
               buttonHover: 'RGBA(255, 255, 255, 0.16)',
+              sidebar: '#1A202C',
+              sidebarItemSessions: '#1A202C',
+              sidebarItemSide: '#1A202C',
+              sidebarItemActive: '#1A202C',
+              sidebarBottom: '#1A202C',
             }}
             {...props}
           />
