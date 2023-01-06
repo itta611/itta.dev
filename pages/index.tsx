@@ -20,7 +20,7 @@ import DinamicShadowImage from 'components/DinamicShadowImage';
 const Home: NextPage = () => {
   return (
     <Box bg="gray.800" color="white" minH="100vh">
-      <Container maxW="container.md" pb={20}>
+      <Container maxW="container.md" pb={7}>
         <Head>
           <title>Itta&apos;s Portfolio</title>
           <link rel="icon" href="/favicon.ico" />
