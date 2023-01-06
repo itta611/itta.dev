@@ -1,11 +1,10 @@
-/* eslint-disable @next/next/no-page-custom-font */
 import {
+  chakra,
   Box,
   Button,
   Container,
   HStack,
   Text,
-  Textarea,
   UnorderedList,
   VStack,
 } from '@chakra-ui/react';
@@ -16,7 +15,6 @@ import Logo from 'components/Logo';
 import ListItemWrap from 'components/ListItemWrap';
 import Link from 'next/link';
 import { IconBrandGithub, IconBrandTwitter, IconCode } from '@tabler/icons';
-import GraphQLPlayground from 'components/GraphQLPlayground';
 import DinamicShadowImage from 'components/DinamicShadowImage';
 
 const Home: NextPage = () => {
@@ -71,7 +69,7 @@ const Home: NextPage = () => {
             </VStack>
           </ContentGroup>
           <ContentGroup title="GraphQL Playground">
-            <GraphQLPlayground endpoint={process.env.NEXT_PUBLIC_API_URL} />
+            <chakra.iframe w="full" h={600} src="/playground/" />
           </ContentGroup>
         </Box>
       </Container>

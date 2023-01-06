@@ -1,5 +1,5 @@
 import { ChakraProvider, extendTheme, ThemeConfig } from '@chakra-ui/react';
-import 'styles/styles.css';
+import 'styles/playground-styles.css';
 import type { AppProps } from 'next/app';
 
 const theme = extendTheme({
