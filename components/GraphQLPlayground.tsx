@@ -10,7 +10,26 @@ const GraphQLPlayground = dynamic<any>(
     return ({ ...props }) => {
       return (
         <Provider store={store}>
-          <Playground {...props} />
+          <Playground
+            codeTheme={{
+              editorBackground: '#1A202C',
+              resultBackground: '#2C313D',
+              leftDrawerBackground: '#2C313D',
+              rightDrawerBackground: '#2C313D',
+              navigationBar: '#2C313D',
+              tab: '#2C313D',
+              tabInactive: '#2C313D',
+              background: '#1A202C',
+              icon: '#718096',
+              iconHover: '#A0AEC0',
+              executeButton: 'RGBA(255, 255, 255, 0.80)',
+              executeButtonHover: 'RGBA(255, 255, 255, 0.92)',
+              executeButtonBorder: '#1A202C',
+              button: '#1A202C',
+              buttonHover: 'RGBA(255, 255, 255, 0.16)',
+            }}
+            {...props}
+          />
         </Provider>
       );
     };
