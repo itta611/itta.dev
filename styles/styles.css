@@ -1,3 +1,7 @@
 .playground > div:nth-child(2) {
   height: 500px;
 }
+
+input[placeholder='Search the docs ...'] {
+  background: #fff;
+}
