@@ -1,5 +1,0 @@
-query getUsersName {
-  users {
-    name
-  }
-}
