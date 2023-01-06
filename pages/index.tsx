@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-page-custom-font */
 import {
   Box,
   Button,
@@ -26,6 +27,10 @@ const Home: NextPage = () => {
         <Head>
           <title>Itta&apos;s Portfolio</title>
           <link rel="icon" href="/favicon.ico" />
+          <link
+            href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700|Source+Code+Pro:400,700&display=swap"
+            rel="stylesheet"
+          />
         </Head>
         <Box display="flex" alignItems="center" as="header" h={72}>
           <Logo mx="auto" />
