@@ -70,7 +70,7 @@ const Home: NextPage = () => {
               </Link>
             </VStack>
           </ContentGroup>
-          <ContentGroup title="Playground">
+          <ContentGroup title="GraphQL Playground">
             <GraphQLPlayground endpoint={process.env.NEXT_PUBLIC_API_URL} />
           </ContentGroup>
         </Box>
