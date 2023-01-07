@@ -1,8 +1,52 @@
-type User {
-  id: ID!
-  name: String!
+type Commit {
+  # The commit id of a `Commit`
+  id: ID
+
+  # The commit message of a `Commit`
+  message: String
+
+  # The url of a `Commit` in GitHub
+  url: String
+
+  # The repository URL of a `Commit` in GitHub
+  repositoryUrl: String
+}
+
+type Tweet {
+  # The text of a `Tweet`
+  body: String
+
+  # The URL of a `Tweet`
+  url: String
+}
+
+type Link {
+  # The `ID` of a `Link`
+  id: ID
+
+  # The url of the user `Link`
+  url: String
 }
 
 type Query {
-  users: [User!]!
+  # Returns a height in `Int` centimeters
+  height: Int
+
+  # Returns a weight in `Int` kilograms
+  weight: Int
+
+  # Returns an age in `Int`
+  age: Int
+
+  # Returns `Boolean` if the I am asleep
+  isSleeping: Boolean
+
+  # Returns a `Link` object by `id`
+  links(id: ID!): [Link!]!
+
+  # Returns a list of all `Commit` objects by `length` (length: 10)
+  latestCommits(length: Int!): [Commit!]!
+
+  # Returns a list of all `Tweet` objects by `length` (length: 10)
+  latestTweets(length: Int!): [Tweet!]!
 }
