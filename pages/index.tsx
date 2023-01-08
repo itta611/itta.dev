@@ -24,6 +24,7 @@ const Home: NextPage = () => {
         <Head>
           <title>Itta&apos;s Portfolio</title>
           <link rel="icon" href="/favicon.ico" />
+          <meta name="description" content="Itta's Portfolio Site" />
         </Head>
         <Box display="flex" alignItems="center" as="header" h={72}>
           <Logo mx="auto" />
