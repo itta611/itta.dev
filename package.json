@@ -5,9 +5,9 @@
   "scripts": {
     "dev": "concurrently \"npm run generate-server --watch\" \"next dev\"",
     "build": "next build",
-    "start": "next start",
+    "start": "concurrently \"next start\" \"npm run generate-server\"",
     "lint": "next lint",
-    "generate-client": "graphql-codegen --config graphql/codegen-server.yaml"
+    "generate-server": "graphql-codegen --config graphql/codegen-server.yaml"
   },
   "dependencies": {
     "@apollo/client": "^3.7.3",
