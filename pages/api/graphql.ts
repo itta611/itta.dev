@@ -42,7 +42,7 @@ const resolvers: Resolvers = {
   },
 };
 
-const apolloServer = new ApolloServer({ typeDefs, resolvers });
+const apolloServer = new ApolloServer({ typeDefs, resolvers, introspection: true });
 
 const startServer = apolloServer.start();
 
