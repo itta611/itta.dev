@@ -31,6 +31,6 @@ type Query {
   weight: Int!
   age: Int!
   isSleeping: Boolean!
-  links(id: String): [Link!]!
-  latestCommits(length: Int): [LatestCommits!]!
+  links: [Link!]!
+  latestCommits(count: Int): [LatestCommits]!
 }

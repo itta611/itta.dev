@@ -29,11 +29,11 @@ const resolvers: Resolvers = {
     weight: () => 47,
     age: () => 14,
     isSleeping: () => new Date().getHours() > 22 || new Date().getHours() < 6,
-    links: (name: string) => (name ? links.find((link) => link.name === name) : links),
-    latestCommits: async (count: number) =>
+    links: () => links,
+    latestCommits: async (_parent, args: { count?: number | null }, _context, _info) =>
       (
         await fetch(
-          `https://api.github.com/users/itta611/events?per_page=${count ?? 10}`
+          `https://api.github.com/users/itta611/events?per_page=${args.count ?? 10}`
         ).then((res) => res.json())
       )
         .filter((event: any) => event.type === 'PushEvent')

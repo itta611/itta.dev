@@ -13,15 +13,52 @@ export type Scalars = {
   Float: number;
 };
 
-export type Query = {
-  __typename?: 'Query';
-  users: Array<User>;
+export type Author = {
+  __typename?: 'Author';
+  email: Scalars['String'];
+  name: Scalars['String'];
 };
 
-export type User = {
-  __typename?: 'User';
+export type LatestCommits = {
+  __typename?: 'LatestCommits';
+  author: Author;
+  message: Scalars['String'];
+  sha: Scalars['String'];
+  url: Scalars['String'];
+};
+
+export type Link = {
+  __typename?: 'Link';
+  name: Scalars['String'];
+  url: Scalars['String'];
+};
+
+export type Query = {
+  __typename?: 'Query';
+  age: Scalars['Int'];
+  height: Scalars['Int'];
+  isSleeping: Scalars['Boolean'];
+  latestCommits: Array<Maybe<LatestCommits>>;
+  links: Array<Link>;
+  weight: Scalars['Int'];
+};
+
+
+export type QueryLatestCommitsArgs = {
+  count?: InputMaybe<Scalars['Int']>;
+};
+
+export type Repo = {
+  __typename?: 'Repo';
   id: Scalars['ID'];
   name: Scalars['String'];
+  url: Scalars['String'];
+};
+
+export type Tweet = {
+  __typename?: 'Tweet';
+  body: Scalars['String'];
+  url: Scalars['String'];
 };
 
 export type WithIndex<TObject> = TObject & Record<string, any>;
@@ -94,34 +131,80 @@ export type DirectiveResolverFn<TResult = {}, TParent = {}, TContext = {}, TArgs
 
 /** Mapping between all available schema types and the resolvers types */
 export type ResolversTypes = ResolversObject<{
+  Author: ResolverTypeWrapper<Author>;
   Boolean: ResolverTypeWrapper<Scalars['Boolean']>;
   ID: ResolverTypeWrapper<Scalars['ID']>;
+  Int: ResolverTypeWrapper<Scalars['Int']>;
+  LatestCommits: ResolverTypeWrapper<LatestCommits>;
+  Link: ResolverTypeWrapper<Link>;
   Query: ResolverTypeWrapper<{}>;
+  Repo: ResolverTypeWrapper<Repo>;
   String: ResolverTypeWrapper<Scalars['String']>;
-  User: ResolverTypeWrapper<User>;
+  Tweet: ResolverTypeWrapper<Tweet>;
 }>;
 
 /** Mapping between all available schema types and the resolvers parents */
 export type ResolversParentTypes = ResolversObject<{
+  Author: Author;
   Boolean: Scalars['Boolean'];
   ID: Scalars['ID'];
+  Int: Scalars['Int'];
+  LatestCommits: LatestCommits;
+  Link: Link;
   Query: {};
+  Repo: Repo;
   String: Scalars['String'];
-  User: User;
+  Tweet: Tweet;
 }>;
 
-export type QueryResolvers<ContextType = any, ParentType extends ResolversParentTypes['Query'] = ResolversParentTypes['Query']> = ResolversObject<{
-  users?: Resolver<Array<ResolversTypes['User']>, ParentType, ContextType>;
-}>;
-
-export type UserResolvers<ContextType = any, ParentType extends ResolversParentTypes['User'] = ResolversParentTypes['User']> = ResolversObject<{
-  id?: Resolver<ResolversTypes['ID'], ParentType, ContextType>;
+export type AuthorResolvers<ContextType = any, ParentType extends ResolversParentTypes['Author'] = ResolversParentTypes['Author']> = ResolversObject<{
+  email?: Resolver<ResolversTypes['String'], ParentType, ContextType>;
   name?: Resolver<ResolversTypes['String'], ParentType, ContextType>;
   __isTypeOf?: IsTypeOfResolverFn<ParentType, ContextType>;
 }>;
 
+export type LatestCommitsResolvers<ContextType = any, ParentType extends ResolversParentTypes['LatestCommits'] = ResolversParentTypes['LatestCommits']> = ResolversObject<{
+  author?: Resolver<ResolversTypes['Author'], ParentType, ContextType>;
+  message?: Resolver<ResolversTypes['String'], ParentType, ContextType>;
+  sha?: Resolver<ResolversTypes['String'], ParentType, ContextType>;
+  url?: Resolver<ResolversTypes['String'], ParentType, ContextType>;
+  __isTypeOf?: IsTypeOfResolverFn<ParentType, ContextType>;
+}>;
+
+export type LinkResolvers<ContextType = any, ParentType extends ResolversParentTypes['Link'] = ResolversParentTypes['Link']> = ResolversObject<{
+  name?: Resolver<ResolversTypes['String'], ParentType, ContextType>;
+  url?: Resolver<ResolversTypes['String'], ParentType, ContextType>;
+  __isTypeOf?: IsTypeOfResolverFn<ParentType, ContextType>;
+}>;
+
+export type QueryResolvers<ContextType = any, ParentType extends ResolversParentTypes['Query'] = ResolversParentTypes['Query']> = ResolversObject<{
+  age?: Resolver<ResolversTypes['Int'], ParentType, ContextType>;
+  height?: Resolver<ResolversTypes['Int'], ParentType, ContextType>;
+  isSleeping?: Resolver<ResolversTypes['Boolean'], ParentType, ContextType>;
+  latestCommits?: Resolver<Array<Maybe<ResolversTypes['LatestCommits']>>, ParentType, ContextType, Partial<QueryLatestCommitsArgs>>;
+  links?: Resolver<Array<ResolversTypes['Link']>, ParentType, ContextType>;
+  weight?: Resolver<ResolversTypes['Int'], ParentType, ContextType>;
+}>;
+
+export type RepoResolvers<ContextType = any, ParentType extends ResolversParentTypes['Repo'] = ResolversParentTypes['Repo']> = ResolversObject<{
+  id?: Resolver<ResolversTypes['ID'], ParentType, ContextType>;
+  name?: Resolver<ResolversTypes['String'], ParentType, ContextType>;
+  url?: Resolver<ResolversTypes['String'], ParentType, ContextType>;
+  __isTypeOf?: IsTypeOfResolverFn<ParentType, ContextType>;
+}>;
+
+export type TweetResolvers<ContextType = any, ParentType extends ResolversParentTypes['Tweet'] = ResolversParentTypes['Tweet']> = ResolversObject<{
+  body?: Resolver<ResolversTypes['String'], ParentType, ContextType>;
+  url?: Resolver<ResolversTypes['String'], ParentType, ContextType>;
+  __isTypeOf?: IsTypeOfResolverFn<ParentType, ContextType>;
+}>;
+
 export type Resolvers<ContextType = any> = ResolversObject<{
+  Author?: AuthorResolvers<ContextType>;
+  LatestCommits?: LatestCommitsResolvers<ContextType>;
+  Link?: LinkResolvers<ContextType>;
   Query?: QueryResolvers<ContextType>;
-  User?: UserResolvers<ContextType>;
+  Repo?: RepoResolvers<ContextType>;
+  Tweet?: TweetResolvers<ContextType>;
 }>;
 
