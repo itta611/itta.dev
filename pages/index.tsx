@@ -20,7 +20,7 @@ import DinamicShadowImage from 'components/DinamicShadowImage';
 const Home: NextPage = () => {
   return (
     <Box bg="gray.800" color="white" minH="100vh">
-      <Container maxW="container.md" pb={7}>
+      <Container maxW="container.md" pb={14}>
         <Head>
           <title>Itta&apos;s Portfolio</title>
           <link rel="icon" href="/favicon.ico" />
@@ -70,7 +70,7 @@ const Home: NextPage = () => {
             </VStack>
           </ContentGroup>
           <ContentGroup title="GraphQL Playground">
-            <chakra.iframe w="full" h={600} src="/playground/" />
+            <chakra.iframe w="full" h={500} src="/playground/" />
           </ContentGroup>
         </Box>
       </Container>
