@@ -32,5 +32,5 @@ type Query {
   age: Int!
   isSleeping: Boolean!
   links: [Link!]!
-  latestCommits(count: Int): [LatestCommits]!
+  latestCommits(count: Int): [LatestCommits!]!
 }

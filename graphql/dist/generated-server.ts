@@ -38,7 +38,7 @@ export type Query = {
   age: Scalars['Int'];
   height: Scalars['Int'];
   isSleeping: Scalars['Boolean'];
-  latestCommits: Array<Maybe<LatestCommits>>;
+  latestCommits: Array<LatestCommits>;
   links: Array<Link>;
   weight: Scalars['Int'];
 };
@@ -181,7 +181,7 @@ export type QueryResolvers<ContextType = any, ParentType extends ResolversParent
   age?: Resolver<ResolversTypes['Int'], ParentType, ContextType>;
   height?: Resolver<ResolversTypes['Int'], ParentType, ContextType>;
   isSleeping?: Resolver<ResolversTypes['Boolean'], ParentType, ContextType>;
-  latestCommits?: Resolver<Array<Maybe<ResolversTypes['LatestCommits']>>, ParentType, ContextType, Partial<QueryLatestCommitsArgs>>;
+  latestCommits?: Resolver<Array<ResolversTypes['LatestCommits']>, ParentType, ContextType, Partial<QueryLatestCommitsArgs>>;
   links?: Resolver<Array<ResolversTypes['Link']>, ParentType, ContextType>;
   weight?: Resolver<ResolversTypes['Int'], ParentType, ContextType>;
 }>;

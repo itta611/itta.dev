@@ -11,9 +11,6 @@ query moreDatas {
   height
   age
   isSleeping
-  latestCommits {
-    message
-  }
 }`;
 
 const Home: NextPage = () => {
