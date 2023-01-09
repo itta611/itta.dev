@@ -39,7 +39,11 @@ query moreDatas {
 const Home: NextPage = () => {
   return (
     <Box overflow="hidden">
-      <GraphQLPlayground endpoint={process.env.NEXT_PUBLIC_API_URL} configString={configString} />
+      <GraphQLPlayground
+        endpoint={process.env.NEXT_PUBLIC_API_URL}
+        configString={configString}
+        defaultQuery={defaultQuery}
+      />
     </Box>
   );
 };

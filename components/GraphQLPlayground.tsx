@@ -1,4 +1,5 @@
 import dynamic from 'next/dynamic';
+import { ComponentProps } from 'react';
 
 const GraphQLPlayground = dynamic<any>(
   async () => {
@@ -7,7 +8,13 @@ const GraphQLPlayground = dynamic<any>(
       import('react-redux'),
     ]);
     // eslint-disable-next-line react/display-name
-    return ({ ...props }) => {
+    return ({ endpoint, defaultQuery, ...props }) => {
+      const tabs: ComponentProps<typeof Playground> = [
+        {
+          query: defaultQuery,
+          endpoint: endpoint,
+        },
+      ];
       return (
         <Provider store={store}>
           <Playground
@@ -33,6 +40,8 @@ const GraphQLPlayground = dynamic<any>(
               sidebarItemActive: '#1A202C',
               sidebarBottom: '#1A202C',
             }}
+            endpoint={endpoint}
+            tabs={tabs}
             {...props}
           />
         </Provider>
