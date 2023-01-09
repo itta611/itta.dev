@@ -24,6 +24,18 @@ const configString = `{
   "tracing.tracingSupported": true
 }`;
 
+const defaultQuery = `# You can get my height, weight etc...
+# Check the "DOCS" drawer on the right side.
+
+query moreDatas {
+  height
+  age
+  isSleeping
+  latestCommits {
+    message
+  }
+}`;
+
 const Home: NextPage = () => {
   return (
     <Box overflow="hidden">
