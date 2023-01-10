@@ -3,10 +3,10 @@ import {
   Box,
   Button,
   Container,
-  HStack,
   Text,
   UnorderedList,
   VStack,
+  Stack,
 } from '@chakra-ui/react';
 import ContentGroup from 'components/ContentGroup';
 import type { NextPage } from 'next';
@@ -31,8 +31,13 @@ const Home: NextPage = () => {
         </Box>
         <Box as="main" mt={8}>
           <ContentGroup title="About">
-            <HStack justifyContent="space-between" alignContent="center">
-              <Box>
+            <Stack
+              justifyContent="space-between"
+              flexDir={{ md: 'row', base: 'column-reverse' }}
+              gap={10}
+              alignItems="center"
+            >
+              <Box w={{ base: 'full', md: 'auto' }}>
                 <Text fontWeight="bold" mb={5}>
                   船橋一汰 Itta Funahashi
                 </Text>
@@ -45,7 +50,7 @@ const Home: NextPage = () => {
                 <Text mt={3}>chottodekiru: TypeScript / React / Next.js / Blender</Text>
               </Box>
               <DinamicShadowImage src="/img/icon.jpg" width={170} height={170} alt="Icon" />
-            </HStack>
+            </Stack>
           </ContentGroup>
           <ContentGroup title="Certificates / Awards">
             <UnorderedList>
