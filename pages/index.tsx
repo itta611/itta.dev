@@ -69,7 +69,7 @@ const Home: NextPage = () => {
               <Link href="https://twitter.com/IttaFunahashi">
                 <Button leftIcon={<IconBrandTwitter />}>Twitter: @IttaFunahashi</Button>
               </Link>
-              <Link href="https://github.com/itta611/itta-portfolio">
+              <Link href="https://github.com/itta611/itta.dev">
                 <Button leftIcon={<IconCode />}>Source Code</Button>
               </Link>
             </VStack>
