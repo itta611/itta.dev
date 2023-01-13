@@ -33,4 +33,5 @@ type Query {
   isSleeping: Boolean!
   links: [Link!]!
   latestCommits(count: Int): [LatestCommits!]!
+  profile: String
 }
