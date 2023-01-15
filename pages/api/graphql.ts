@@ -30,7 +30,11 @@ const resolvers: Resolvers = {
     age: () => 14,
     profile: () =>
       "14 y/o, who interested in UI Design! I'm a student at a high school in Japan. I'm currently learning Rust, React, Next.js, and GraphQL.",
-    isSleeping: () => new Date().getHours() > 22 || new Date().getHours() < 6,
+    isSleeping: () => {
+      const date = new Date();
+      date.setTime(date.getTime() + 1000 * 60 * 60 * 9);
+      return date.getHours() > 22 || new Date().getHours() < 6;
+    },
     links: () => links,
     latestCommits: async (_parent, args: { count?: number | null }, _context, _info) =>
       (
