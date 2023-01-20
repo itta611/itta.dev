@@ -22,7 +22,7 @@ interface HomePageProps {
   ip: string;
 }
 
-const Home: FC<HomePageProps> = ({ ip }) => {
+const Home: FC<HomePageProps> = ({ hideTwitter }) => {
   return (
     <Box bg="gray.800" color="white" minH="100vh">
       <Container maxW="container.md" pb={14}>
@@ -71,7 +71,7 @@ const Home: FC<HomePageProps> = ({ ip }) => {
               <Link href="https://github.com/itta611">
                 <Button leftIcon={<IconBrandGithub />}>GitHub: @itta611</Button>
               </Link>
-              {process.env.HIDE_IP !== ip && (
+              {hideTwitter && (
                 <Link href="https://twitter.com/IttaFunahashi">
                   <Button leftIcon={<IconBrandTwitter />}>Twitter: @IttaFunahashi</Button>
                 </Link>
@@ -92,10 +92,11 @@ const Home: FC<HomePageProps> = ({ ip }) => {
 
 export async function getServerSideProps({ req }: { req: NextApiRequest }) {
   const ip = req.headers['x-real-ip'] || req.connection.remoteAddress;
+  const hideTwitter = process.env.HIDE_IP === ip;
 
   return {
     props: {
-      ip,
+      hideTwitter,
     },
   };
 }
