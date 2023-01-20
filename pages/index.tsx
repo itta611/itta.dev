@@ -25,7 +25,6 @@ interface HomePageProps {
 const Home: FC<HomePageProps> = ({ ip }) => {
   return (
     <Box bg="gray.800" color="white" minH="100vh">
-      {ip}
       <Container maxW="container.md" pb={14}>
         <Head>
           <title>Itta&apos;s Portfolio</title>
@@ -92,9 +91,7 @@ const Home: FC<HomePageProps> = ({ ip }) => {
 };
 
 export async function getServerSideProps({ req }: { req: NextApiRequest }) {
-  console.log(req.connection);
   const ip = req.headers['x-real-ip'] || req.connection.remoteAddress;
-  console.log(ip);
 
   return {
     props: {
