@@ -40,6 +40,7 @@ export type Query = {
   isSleeping: Scalars['Boolean'];
   latestCommits: Array<LatestCommits>;
   links: Array<Link>;
+  profile?: Maybe<Scalars['String']>;
   weight: Scalars['Int'];
 };
 
@@ -183,6 +184,7 @@ export type QueryResolvers<ContextType = any, ParentType extends ResolversParent
   isSleeping?: Resolver<ResolversTypes['Boolean'], ParentType, ContextType>;
   latestCommits?: Resolver<Array<ResolversTypes['LatestCommits']>, ParentType, ContextType, Partial<QueryLatestCommitsArgs>>;
   links?: Resolver<Array<ResolversTypes['Link']>, ParentType, ContextType>;
+  profile?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>;
   weight?: Resolver<ResolversTypes['Int'], ParentType, ContextType>;
 }>;
 

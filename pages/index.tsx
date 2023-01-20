@@ -9,7 +9,7 @@ import {
   Stack,
 } from '@chakra-ui/react';
 import ContentGroup from 'components/ContentGroup';
-import type { NextPage } from 'next';
+import type { NextApiRequest, NextPage } from 'next';
 import Head from 'next/head';
 import Logo from 'components/Logo';
 import ListItemWrap from 'components/ListItemWrap';
@@ -17,9 +17,10 @@ import Link from 'next/link';
 import { IconBrandGithub, IconBrandTwitter, IconCode } from '@tabler/icons';
 import DinamicShadowImage from 'components/DinamicShadowImage';
 
-const Home: NextPage = () => {
+const Home: NextPage = ({ ip }: { ip: string }) => {
   return (
     <Box bg="gray.800" color="white" minH="100vh">
+      {ip}
       <Container maxW="container.md" pb={14}>
         <Head>
           <title>Itta&apos;s Portfolio</title>
@@ -66,9 +67,11 @@ const Home: NextPage = () => {
               <Link href="https://github.com/itta611">
                 <Button leftIcon={<IconBrandGithub />}>GitHub: @itta611</Button>
               </Link>
-              <Link href="https://twitter.com/IttaFunahashi">
-                <Button leftIcon={<IconBrandTwitter />}>Twitter: @IttaFunahashi</Button>
-              </Link>
+              {process.env.HIDE_IP !== ip && (
+                <Link href="https://twitter.com/IttaFunahashi">
+                  <Button leftIcon={<IconBrandTwitter />}>Twitter: @IttaFunahashi</Button>
+                </Link>
+              )}
               <Link href="https://github.com/itta611/itta.dev">
                 <Button leftIcon={<IconCode />}>Source Code</Button>
               </Link>
@@ -82,5 +85,17 @@ const Home: NextPage = () => {
     </Box>
   );
 };
+
+export async function getServerSideProps({ req }: { req: NextApiRequest }) {
+  console.log(req.connection);
+  const ip = req.headers['x-real-ip'] || req.connection.remoteAddress;
+  console.log(ip);
+
+  return {
+    props: {
+      ip,
+    },
+  };
+}
 
 export default Home;
