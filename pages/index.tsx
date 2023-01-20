@@ -9,15 +9,20 @@ import {
   Stack,
 } from '@chakra-ui/react';
 import ContentGroup from 'components/ContentGroup';
-import type { NextApiRequest, NextPage } from 'next';
+import type { NextApiRequest } from 'next';
 import Head from 'next/head';
 import Logo from 'components/Logo';
 import ListItemWrap from 'components/ListItemWrap';
 import Link from 'next/link';
 import { IconBrandGithub, IconBrandTwitter, IconCode } from '@tabler/icons';
 import DinamicShadowImage from 'components/DinamicShadowImage';
+import { FC } from 'react';
 
-const Home: NextPage = ({ ip }: { ip: string }) => {
+interface HomePageProps {
+  ip: string;
+}
+
+const Home: FC<HomePageProps> = ({ ip }) => {
   return (
     <Box bg="gray.800" color="white" minH="100vh">
       {ip}
