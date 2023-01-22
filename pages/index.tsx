@@ -54,7 +54,7 @@ const Home: FC<HomePageProps> = ({ hideTwitter }) => {
                 </Text>
                 <Text mt={3}>chottodekiru: TypeScript / React / Next.js / Blender</Text>
               </Box>
-              <DinamicShadowImage src="/img/icon.png" width={170} height={170} alt="Icon" />
+              <DinamicShadowImage src="/img/icon.png" width={200} height={200} alt="Icon" />
             </Stack>
           </ContentGroup>
           <ContentGroup title="Certificates / Awards">
