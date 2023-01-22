@@ -19,7 +19,7 @@ import DinamicShadowImage from 'components/DinamicShadowImage';
 import { FC } from 'react';
 
 interface HomePageProps {
-  ip: string;
+  hideTwitter: boolean;
 }
 
 const Home: FC<HomePageProps> = ({ hideTwitter }) => {
