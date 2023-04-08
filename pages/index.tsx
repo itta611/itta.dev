@@ -82,7 +82,7 @@ const Home: FC<HomePageProps> = ({ hideTwitter }) => {
             </VStack>
           </ContentGroup>
           <ContentGroup title="GraphQL Playground">
-            <chakra.iframe w="full" h={500} src="/playground/" />
+            <chakra.iframe w="full" loading="lazy" h={500} src="/playground/" />
           </ContentGroup>
         </Box>
       </Container>
