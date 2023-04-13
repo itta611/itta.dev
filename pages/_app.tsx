@@ -1,4 +1,5 @@
 import { ChakraProvider, extendTheme, ThemeConfig } from '@chakra-ui/react';
+import { Analytics } from '@vercel/analytics/react';
 import 'styles/playground-styles.css';
 import type { AppProps } from 'next/app';
 
@@ -29,6 +30,7 @@ function App({ Component, pageProps }: AppProps) {
   return (
     <ChakraProvider theme={theme}>
       <Component {...pageProps} />
+      <Analytics />
     </ChakraProvider>
   );
 }
