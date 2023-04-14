@@ -92,6 +92,7 @@ const Home: FC<HomePageProps> = ({ hideTwitter }) => {
 
 export async function getServerSideProps({ req }: { req: NextApiRequest }) {
   const ip = req.headers['x-real-ip'] || req.connection.remoteAddress;
+  console.log(ip);
   const hideTwitter = process.env.HIDE_IP === ip;
 
   return {
