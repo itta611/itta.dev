@@ -71,7 +71,7 @@ const Home: FC<HomePageProps> = ({ hideTwitter }) => {
               <Link href="https://github.com/itta611">
                 <Button leftIcon={<IconBrandGithub />}>GitHub: @itta611</Button>
               </Link>
-              {hideTwitter && (
+              {!hideTwitter && (
                 <Link href="https://twitter.com/IttaFunahashi">
                   <Button leftIcon={<IconBrandTwitter />}>Twitter: @IttaFunahashi</Button>
                 </Link>
@@ -92,7 +92,6 @@ const Home: FC<HomePageProps> = ({ hideTwitter }) => {
 
 export async function getServerSideProps({ req }: { req: NextApiRequest }) {
   const ip = req.headers['x-real-ip'] || req.connection.remoteAddress;
-  console.log(ip);
   const hideTwitter = process.env.HIDE_IP === ip;
 
   return {
