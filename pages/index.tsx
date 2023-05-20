@@ -16,13 +16,19 @@ import ListItemWrap from 'components/ListItemWrap';
 import Link from 'next/link';
 import { IconBrandGithub, IconBrandTwitter, IconCode } from '@tabler/icons';
 import DinamicShadowImage from 'components/DinamicShadowImage';
-import { FC } from 'react';
+import { FC, ReactNode, useEffect, useState } from 'react';
 
 interface HomePageProps {
   hideTwitter: boolean;
 }
 
 const Home: FC<HomePageProps> = ({ hideTwitter }) => {
+  const [iframeComponent, setIframeComponent] = useState<ReactNode | null>(null);
+
+  useEffect(() => {
+    setIframeComponent(<chakra.iframe w="full" loading="lazy" h={500} src="/playground/" />);
+  }, []);
+
   return (
     <Box bg="gray.800" color="white" minH="100vh">
       <Container maxW="container.md" pb={14}>
@@ -81,9 +87,7 @@ const Home: FC<HomePageProps> = ({ hideTwitter }) => {
               </Link>
             </VStack>
           </ContentGroup>
-          <ContentGroup title="GraphQL Playground">
-            <chakra.iframe w="full" loading="lazy" h={500} src="/playground/" />
-          </ContentGroup>
+          <ContentGroup title="GraphQL Playground">{iframeComponent}</ContentGroup>
         </Box>
       </Container>
     </Box>
