@@ -65,6 +65,7 @@ const Home: FC<HomePageProps> = ({ hideTwitter }) => {
           </ContentGroup>
           <ContentGroup title="Certificates / Awards">
             <UnorderedList>
+              <ListItemWrap>基本情報技術者試験 (FE)</ListItemWrap>
               <ListItemWrap>英検２級</ListItemWrap>
               <ListItemWrap>
                 U-22 プログラミング・コンテスト 2020 経済産業省商務政策局長賞 受賞
