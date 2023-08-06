@@ -1,21 +1,21 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: my-app-deployment
+  name: itta-dev-deployment
   labels:
-    app: my-app
+    app: itta-dev
 spec:
   replicas: 3
   selector:
     matchLabels:
-      app: my-app
+      app: itta-dev
   template:
     metadata:
       labels:
-        app: my-app
+        app: itta-dev
     spec:
       containers:
-        - name: my-app
+        - name: itta-dev
           image: itta/itta.dev:latest
           ports:
             - containerPort: 3000
