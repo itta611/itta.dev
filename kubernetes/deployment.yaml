@@ -17,5 +17,6 @@ spec:
       containers:
         - name: itta-dev
           image: itta/itta.dev:latest
+          imagePullPolicy: Always
           ports:
             - containerPort: 3000
