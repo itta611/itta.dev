@@ -9,8 +9,8 @@ jobs:
   build:
     runs-on: ubuntu-latest
     strategy:
-    matrix:
-      platform: [linux/arm64]
+      matrix:
+        platform: [linux/arm64]
 
     steps:
       - name: Check out code
