@@ -29,7 +29,7 @@ const resolvers: Resolvers = {
     weight: () => 47,
     age: () => 14,
     profile: () =>
-      "14 y/o, who interested in UI Design! I'm a student at a high school in Japan. I'm currently learning Rust, React, Next.js, and GraphQL.",
+      "15 y/o, who interested in UI Design! I'm a student at a high school in Japan. I'm currently learning Rust, React, Next.js, and GraphQL.",
     isSleeping: () => {
       const date = new Date();
       date.setTime(date.getTime() + 1000 * 60 * 60 * 9);
