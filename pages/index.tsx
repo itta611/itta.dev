@@ -88,22 +88,10 @@ const Home: FC<HomePageProps> = ({ hideTwitter }) => {
               </Link>
             </VStack>
           </ContentGroup>
-          <ContentGroup title="GraphQL Playground">{iframeComponent}</ContentGroup>
         </Box>
       </Container>
     </Box>
   );
 };
-
-export async function getServerSideProps({ req }: { req: NextApiRequest }) {
-  const ip = req.headers['x-real-ip'] || req.connection.remoteAddress;
-  const hideTwitter = process.env.HIDE_IP === ip;
-
-  return {
-    props: {
-      hideTwitter,
-    },
-  };
-}
 
 export default Home;
