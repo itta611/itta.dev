@@ -3,11 +3,10 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "concurrently \"npm run generate-server --watch\" \"next dev\"",
-    "build": "npm run generate-server && next build",
-    "start": "npm run generate-server && next start",
-    "lint": "next lint",
-    "generate-server": "graphql-codegen --config graphql/codegen-server.yaml"
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
   },
   "dependencies": {
     "@apollo/client": "^3.7.3",
