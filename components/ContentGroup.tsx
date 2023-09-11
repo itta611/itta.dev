@@ -18,9 +18,9 @@ const ContentGroup: FC<ContentGroupProps> = ({ title, children, ...chakraProps }
         position="relative"
         _before={{
           content: '""',
-          background: 'whiteAlpha.200',
+          background: 'gray.700',
           position: 'absolute',
-          // borderRadius: 8,
+          borderRadius: 3,
           height: 4,
           left: -3,
           right: -3,

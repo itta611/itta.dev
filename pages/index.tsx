@@ -1,76 +1,67 @@
-import {
-  chakra,
-  Box,
-  Button,
-  Container,
-  Text,
-  UnorderedList,
-  VStack,
-  Stack,
-} from '@chakra-ui/react';
+import { Box, Button, Container, Text, UnorderedList, VStack, Stack } from '@chakra-ui/react';
 import ContentGroup from 'components/ContentGroup';
-import type { NextApiRequest } from 'next';
 import Head from 'next/head';
 import Logo from 'components/Logo';
 import ListItemWrap from 'components/ListItemWrap';
 import Link from 'next/link';
 import { IconBrandGithub, IconBrandTwitter, IconCode } from '@tabler/icons';
 import DinamicShadowImage from 'components/DinamicShadowImage';
-import { FC, ReactNode, useEffect, useState } from 'react';
+import { FC } from 'react';
 
 interface HomePageProps {
   hideTwitter: boolean;
 }
 
 const Home: FC<HomePageProps> = ({ hideTwitter }) => {
-  const [iframeComponent, setIframeComponent] = useState<ReactNode | null>(null);
-
-  useEffect(() => {
-    setIframeComponent(<chakra.iframe w="full" loading="lazy" h={500} src="/playground/" />);
-  }, []);
-
   return (
     <Box bg="gray.800" color="white" minH="100vh">
-      <Container maxW="container.md" pb={14}>
+      <Container maxW="container.md" pb={15}>
         <Head>
           <title>Itta&apos;s Portfolio</title>
           <link rel="icon" href="/favicon.ico" />
           <meta name="description" content="Itta's Portfolio Site" />
         </Head>
-        <Box display="flex" alignItems="center" as="header" mx={10} h={72}>
+        <Box display="flex" alignItems="center" as="header" mx={11} h={72}>
           <Logo mx="auto" />
         </Box>
-        <Box as="main" mt={8}>
+        <Box as="main" mt={9}>
           <ContentGroup title="About">
             <Stack
               justifyContent="space-between"
               flexDir={{ md: 'row', base: 'column-reverse' }}
-              gap={10}
+              gap={11}
               alignItems="center"
             >
               <Box w={{ base: 'full', md: 'auto' }}>
-                <Text fontWeight="bold" mb={5}>
+                <Text fontWeight="bold" mb={6}>
                   船橋一汰 Itta Funahashi
                 </Text>
-                <Text>15 y/o</Text>
+                <Text>16 y/o</Text>
                 <Text>
                   Reactを書いています。 Rust勉強中です...
                   <br />
                   UI/UXに興味があります。
                 </Text>
-                <Text mt={3}>chottodekiru: TypeScript / React / Next.js / Blender</Text>
+                <Text mt={4}>chottodekiru: TypeScript / React / Next.js / Blender</Text>
               </Box>
-              <DinamicShadowImage src="/img/icon.png" width={200} height={200} alt="Icon" />
+              <DinamicShadowImage src="/img/icon.png" width={201} height={200} alt="Icon" />
             </Stack>
+          </ContentGroup>
+          <ContentGroup title="What I am doing">
+            <Box>
+              既存のアプリケーション大きく差別化を図るようなユーザー体験をつくっています。
+              <br />
+              「一つのテーマを持って、それを作り続ける」ことも大切だと言われますが、せっかく私は学生なのですから、興味のある技術を手当たり次第に学ぶことにも重きを置いています。
+            </Box>
           </ContentGroup>
           <ContentGroup title="Certificates / Awards">
             <UnorderedList>
               <ListItemWrap>基本情報技術者試験 (FE)</ListItemWrap>
               <ListItemWrap>英検２級</ListItemWrap>
               <ListItemWrap>
-                U-22 プログラミング・コンテスト 2020 経済産業省商務政策局長賞 受賞
+                U-21 プログラミング・コンテスト 2020 経済産業省商務政策局長賞 受賞
               </ListItemWrap>
-              <ListItemWrap>U-22 プログラミング・コンテスト 2021 経済産業大臣賞 受賞</ListItemWrap>
+              <ListItemWrap>U-21 プログラミング・コンテスト 2021 経済産業大臣賞 受賞</ListItemWrap>
             </UnorderedList>
           </ContentGroup>
           <ContentGroup title="Links">
