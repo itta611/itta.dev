@@ -36,7 +36,7 @@ const Home: FC<HomePageProps> = ({ hideTwitter }) => {
                 <Text fontWeight="bold" mb={6}>
                   船橋一汰 Itta Funahashi
                 </Text>
-                <Text>16 y/o</Text>
+                <Text>15 y/o</Text>
                 <Text>
                   Reactを書いています。 Rust勉強中です...
                   <br />
