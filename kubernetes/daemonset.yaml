@@ -1,11 +1,10 @@
 apiVersion: apps/v1
-kind: Deployment
+kind: DaemonSet
 metadata:
-  name: itta-dev-deployment
+  name: itta-dev-daemonset
   labels:
     app: itta-dev
 spec:
-  replicas: 3
   selector:
     matchLabels:
       app: itta-dev
