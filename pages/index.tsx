@@ -59,9 +59,9 @@ const Home: FC<HomePageProps> = ({ hideTwitter }) => {
               <ListItemWrap>基本情報技術者試験 (FE)</ListItemWrap>
               <ListItemWrap>英検２級</ListItemWrap>
               <ListItemWrap>
-                U-21 プログラミング・コンテスト 2020 経済産業省商務政策局長賞 受賞
+                U-22 プログラミング・コンテスト 2020 経済産業省商務政策局長賞 受賞
               </ListItemWrap>
-              <ListItemWrap>U-21 プログラミング・コンテスト 2021 経済産業大臣賞 受賞</ListItemWrap>
+              <ListItemWrap>U-22 プログラミング・コンテスト 2021 経済産業大臣賞 受賞</ListItemWrap>
             </UnorderedList>
           </ContentGroup>
           <ContentGroup title="Links">
