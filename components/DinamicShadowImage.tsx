@@ -7,7 +7,6 @@ const DinamicShadowImage: FC<ImageProps> = ({ width, height, alt, ...props }) =>
   return (
     <Box position="relative" width={width} height={height}>
       <Box
-        rounded="lg"
         position="absolute"
         inset={0}
         filter="blur(8px)"
@@ -15,7 +14,9 @@ const DinamicShadowImage: FC<ImageProps> = ({ width, height, alt, ...props }) =>
         userSelect="none"
         pointerEvents="none"
       >
-        <Image width={width} height={height} alt={alt} {...props} />
+        <Box overflow="hidden" rounded="lg">
+          <Image width={width} height={height} alt={alt} {...props} />
+        </Box>
       </Box>
       <Box rounded="lg" position="relative" inset={0} overflow="hidden">
         <Image width={width} height={height} alt={alt} {...props} />
