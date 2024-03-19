@@ -14,7 +14,7 @@ const DinamicShadowImage: FC<ImageProps> = ({ width, height, alt, ...props }) =>
         userSelect="none"
         pointerEvents="none"
       >
-        <Box overflow="hidden" rounded="lg">
+        <Box overflow="hidden" rounded="xl">
           <Image width={width} height={height} alt={alt} {...props} />
         </Box>
       </Box>
