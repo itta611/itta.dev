@@ -10,7 +10,6 @@ const DinamicShadowImage: FC<ImageProps> = ({ width, height, alt, ...props }) =>
         rounded="lg"
         position="absolute"
         inset={0}
-        overflow="hidden"
         filter="blur(8px)"
         transform="scale(1.1, 1.1)"
         userSelect="none"
