@@ -3,7 +3,6 @@ name: Build and Push Docker Image
 on:
   push:
     branches:
-      - main
 
 jobs:
   build:
@@ -30,5 +29,5 @@ jobs:
         with:
           context: .
           push: true
-          tags: itta/itta.dev:latest
+          tags: itta/itta.dev:${{ github.ref }}
           platforms: ${{ matrix.platform }}
