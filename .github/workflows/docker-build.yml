@@ -29,5 +29,5 @@ jobs:
         with:
           context: .
           push: true
-          tags: itta/itta.dev:${{ github.ref }}
+          tags: itta/itta.dev:${{ github.ref_name }}
           platforms: ${{ matrix.platform }}
