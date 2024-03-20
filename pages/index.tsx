@@ -1,4 +1,13 @@
-import { Box, Button, Container, Text, UnorderedList, VStack, Stack } from '@chakra-ui/react';
+import {
+  Box,
+  Button,
+  Container,
+  Text,
+  UnorderedList,
+  VStack,
+  Stack,
+  HStack,
+} from '@chakra-ui/react';
 import ContentGroup from 'components/ContentGroup';
 import Head from 'next/head';
 import Logo from 'components/Logo';
@@ -6,13 +15,29 @@ import ListItemWrap from 'components/ListItemWrap';
 import Link from 'next/link';
 import { IconBrandGithub, IconBrandTwitter, IconCode } from '@tabler/icons';
 import DinamicShadowImage from 'components/DinamicShadowImage';
-import { FC } from 'react';
+import { FC, useEffect, useState } from 'react';
+import ServerStats from 'components/ServerStats';
+import type { Stats } from 'types';
 
-interface HomePageProps {
-  hideTwitter: boolean;
-}
+const Home: FC = () => {
+  const [statsList, setStats] = useState<{ [key: string]: Stats } | undefined>();
+  const hosts = statsList ? Object.keys(statsList) : [];
 
-const Home: FC<HomePageProps> = ({ hideTwitter }) => {
+  useEffect(() => {
+    const timerId = setInterval(() => {
+      const fetchStats = async () => {
+        const res = await fetch('/api/getStats');
+        const data = await res.json();
+        setStats(data);
+      };
+      fetchStats();
+    }, 1000);
+
+    return () => {
+      clearInterval(timerId);
+    };
+  }, []);
+
   return (
     <Box bg="gray.800" color="white" minH="100vh">
       <Container maxW="container.md" pb={15}>
@@ -59,21 +84,33 @@ const Home: FC<HomePageProps> = ({ hideTwitter }) => {
               <ListItemWrap>基本情報技術者試験 (FE)</ListItemWrap>
               <ListItemWrap>英検２級</ListItemWrap>
               <ListItemWrap>
-                U-22 プログラミング・コンテスト 2020 経済産業省商務政策局長賞 受賞
+                U-22 プログラミング・コンテスト 2020 経済産業省商務政策局長賞
               </ListItemWrap>
-              <ListItemWrap>U-22 プログラミング・コンテスト 2021 経済産業大臣賞 受賞</ListItemWrap>
+              <ListItemWrap>U-22 プログラミング・コンテスト 2021 経済産業大臣賞</ListItemWrap>
             </UnorderedList>
+          </ContentGroup>
+          <ContentGroup title="Server Stats">
+            <HStack spacing={5}>
+              {statsList &&
+                hosts.map((hostname) => (
+                  <ServerStats
+                    temperature={statsList[hostname].temperature}
+                    cpuUsage={statsList[hostname].cpuUsage}
+                    memoryUsage={statsList[hostname].usedMem}
+                    hostname={hostname}
+                    key={hostname}
+                  />
+                ))}
+            </HStack>
           </ContentGroup>
           <ContentGroup title="Links">
             <VStack>
               <Link href="https://github.com/itta611">
                 <Button leftIcon={<IconBrandGithub />}>GitHub: @itta611</Button>
               </Link>
-              {!hideTwitter && (
-                <Link href="https://twitter.com/IttaFunahashi">
-                  <Button leftIcon={<IconBrandTwitter />}>Twitter: @IttaFunahashi</Button>
-                </Link>
-              )}
+              <Link href="https://twitter.com/IttaFunahashi">
+                <Button leftIcon={<IconBrandTwitter />}>Twitter: @IttaFunahashi</Button>
+              </Link>
               <Link href="https://github.com/itta611/itta.dev">
                 <Button leftIcon={<IconCode />}>Source Code</Button>
               </Link>
