@@ -1,10 +1,17 @@
 import { NextApiRequest, NextApiResponse } from 'next';
-import { Stats } from 'types';
 
-function toCamelCase(obj: any): { [key: string]: Stats } {
-  return Object.keys(obj).reduce((newObj, key) => {
+function toCamelCase(obj: any): any {
+  if (Array.isArray(obj)) {
+    return obj.map((v) => toCamelCase(v));
+  }
+
+  if (obj === null || typeof obj !== 'object') {
+    return obj;
+  }
+
+  return Object.keys(obj).reduce((newObj: any, key) => {
     const newKey = key.replace(/(_\w)/g, (match) => match[1].toUpperCase());
-    newObj[newKey] = toCamelCase(obj[key]) as Stats;
+    newObj[newKey] = toCamelCase(obj[key]);
     return newObj;
   }, {});
 }
