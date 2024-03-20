@@ -13,7 +13,7 @@ import Head from 'next/head';
 import Logo from 'components/Logo';
 import ListItemWrap from 'components/ListItemWrap';
 import Link from 'next/link';
-import { IconBrandGithub, IconBrandTwitter, IconCode } from '@tabler/icons';
+import { IconBrandGithub, IconBrandX, IconCode } from '@tabler/icons-react';
 import DinamicShadowImage from 'components/DinamicShadowImage';
 import { FC, useEffect, useState } from 'react';
 import ServerStats from 'components/ServerStats';
@@ -22,7 +22,6 @@ import type { Stats } from 'types';
 const Home: FC = () => {
   const [statsList, setStats] = useState<{ [key: string]: Stats } | undefined>();
   const hosts = statsList ? Object.keys(statsList) : [];
-  let hostname = 'rpi1';
 
   useEffect(() => {
     const timerId = setInterval(() => {
@@ -110,7 +109,7 @@ const Home: FC = () => {
                 <Button leftIcon={<IconBrandGithub />}>GitHub: @itta611</Button>
               </Link>
               <Link href="https://twitter.com/IttaFunahashi">
-                <Button leftIcon={<IconBrandTwitter />}>Twitter: @IttaFunahashi</Button>
+                <Button leftIcon={<IconBrandX />}>Twitter(X): @IttaFunahashi</Button>
               </Link>
               <Link href="https://github.com/itta611/itta.dev">
                 <Button leftIcon={<IconCode />}>Source Code</Button>

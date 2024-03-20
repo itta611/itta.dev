@@ -1,5 +1,5 @@
 import { Box, HStack, Text, VStack } from '@chakra-ui/react';
-import { IconCpu, IconRuler3 } from '@tabler/icons';
+import { IconCpu, IconRuler3 } from '@tabler/icons-react';
 import { FC } from 'react';
 
 interface Props {
