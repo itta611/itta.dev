@@ -22,6 +22,7 @@ import type { Stats } from 'types';
 const Home: FC = () => {
   const [statsList, setStats] = useState<{ [key: string]: Stats } | undefined>();
   const hosts = statsList ? Object.keys(statsList) : [];
+  hosts.sort();
 
   useEffect(() => {
     const timerId = setInterval(() => {
