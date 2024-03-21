@@ -32,7 +32,7 @@ const Home: FC = () => {
         setStats(data);
       };
       fetchStats();
-    }, 1000);
+    }, 5000);
 
     return () => {
       clearInterval(timerId);
