@@ -17,6 +17,7 @@ function toCamelCase(obj: any): any {
 }
 
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
+  console.log(`http://${process.env.API_ENDPOINT!}:2784/getlist`);
   let statsList = (await (await fetch(`http://${process.env.API_ENDPOINT!}:2784/getlist`)).json())
     .data;
   statsList = toCamelCase(statsList);
