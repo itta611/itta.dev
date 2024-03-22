@@ -25,14 +25,14 @@ const Home: FC = () => {
   hosts.sort();
 
   useEffect(() => {
-    const timerId = setInterval(() => {
-      const fetchStats = async () => {
-        const res = await fetch('/api/getStats');
-        const data = await res.json();
-        setStats(data);
-      };
-      fetchStats();
-    }, 5000);
+    let timerId: NodeJS.Timeout;
+
+    const fetchStats = async () => {
+      const res = await fetch('/api/getStats');
+      const data = await res.json();
+      setStats(data);
+      timerId = setTimeout(fetchStats, 5000);
+    };
 
     return () => {
       clearInterval(timerId);
