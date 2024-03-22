@@ -34,6 +34,8 @@ const Home: FC = () => {
       timerId = setTimeout(fetchStats, 5000);
     };
 
+    fetchStats();
+
     return () => {
       clearInterval(timerId);
     };
