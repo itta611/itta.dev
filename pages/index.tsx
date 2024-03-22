@@ -98,6 +98,7 @@ const Home: FC = () => {
                     temperature={statsList[hostname].temperature}
                     cpuUsage={statsList[hostname].cpuUsage}
                     memoryUsage={statsList[hostname].usedMem}
+                    totalMemory={statsList[hostname].totalMem}
                     hostname={hostname}
                     key={hostname}
                   />

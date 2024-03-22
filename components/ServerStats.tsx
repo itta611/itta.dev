@@ -6,11 +6,12 @@ interface Props {
   temperature: number;
   cpuUsage: number;
   memoryUsage: number;
+  totalMemory: number;
   hostname: string;
 }
 
-const ServerStats: FC<Props> = ({ temperature, cpuUsage, memoryUsage, hostname }) => (
-  <Box w={24} color="gray.400">
+const ServerStats: FC<Props> = ({ temperature, cpuUsage, memoryUsage, totalMemory, hostname }) => (
+  <Box w={28} color="gray.400">
     <VStack spacing={-1} py={2}>
       <Box fontWeight="bold" fontSize="3xl" color={temperature < 50 ? 'yellow.400' : 'red.400'}>
         {temperature}
@@ -25,7 +26,9 @@ const ServerStats: FC<Props> = ({ temperature, cpuUsage, memoryUsage, hostname }
       </HStack>
       <HStack alignItems="center" spacing={2}>
         <IconRuler3 size={20} strokeWidth={1.5} style={{ transform: 'rotate(180deg)' }} />
-        <Text fontSize="sm">{memoryUsage}%</Text>
+        <Text fontSize="sm">
+          {memoryUsage} / {totalMemory}GB
+        </Text>
       </HStack>
     </VStack>
   </Box>
