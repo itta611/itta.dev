@@ -13,7 +13,17 @@ import Head from 'next/head';
 import Logo from 'components/Logo';
 import ListItemWrap from 'components/ListItemWrap';
 import Link from 'next/link';
-import { IconBrandGithub, IconBrandX, IconCode } from '@tabler/icons-react';
+import {
+  IconBrandGithub,
+  IconBrandX,
+  IconBuilding,
+  IconCake,
+  IconCode,
+  IconHammer,
+  IconHeartCode,
+  IconLocation,
+  IconMapPin,
+} from '@tabler/icons-react';
 import DinamicShadowImage from 'components/DinamicShadowImage';
 import { FC, useEffect, useState } from 'react';
 import ServerStats from 'components/ServerStats';
@@ -66,15 +76,37 @@ const Home: FC = () => {
             >
               <Box w={{ base: 'full', md: 'auto' }}>
                 <Text fontWeight="bold" mb={6}>
-                  船橋一汰 Itta Funahashi
+                  Itta Funahashi{' '}
+                  <Text textColor="gray.400" as="span">
+                    (@itta611)
+                  </Text>
                 </Text>
-                <Text>15 y/o</Text>
-                <Text>
-                  Reactを書いています。 Rust勉強中です...
-                  <br />
-                  UI/UXに興味があります。
-                </Text>
-                <Text mt={4}>chottodekiru: TypeScript / React / Next.js / Blender</Text>
+                <VStack spacing={2} textColor="teal.200" alignItems="start">
+                  <HStack>
+                    <IconCake size={18} />
+                    <Text as="span" ml={2} textColor="white" fontSize="sm" fontWeight="semibold">
+                      2008/6/11 (15 さい)
+                    </Text>
+                  </HStack>
+                  <HStack>
+                    <IconMapPin size={18} />
+                    <Text as="span" ml={2} textColor="white" fontSize="sm" fontWeight="semibold">
+                      Aichi, Japan
+                    </Text>
+                  </HStack>
+                  <HStack>
+                    <IconHeartCode size={18} />
+                    <Text as="span" ml={2} textColor="white" fontSize="sm" fontWeight="semibold">
+                      Web Frontend, UI Design
+                    </Text>
+                  </HStack>
+                  <HStack>
+                    <IconHammer size={18} />
+                    <Text as="span" ml={2} textColor="white" fontSize="sm" fontWeight="semibold">
+                      TypeScript / React / Next.js / Blender
+                    </Text>
+                  </HStack>
+                </VStack>
               </Box>
               <DinamicShadowImage src="/img/icon.png" width={201} height={200} alt="Icon" />
             </Stack>
