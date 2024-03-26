@@ -35,10 +35,6 @@ const Home: FC = () => {
   hosts.sort();
 
   useEffect(() => {
-    if (!process.env.API_ENDPOINT) {
-      return;
-    }
-
     let timerId: NodeJS.Timeout;
 
     const fetchStats = async () => {
