@@ -110,7 +110,7 @@ const Home: FC = () => {
           </ContentGroup>
           <ContentGroup title="What I am doing">
             <Text>
-              既存のアプリケーションと大きく差別化を図るようなユーザー体験をつくっています。
+              革新的なインターフェースがどういったユーザー体験を与えるのか考えています。
               <br />
               たとえば、僕が中学の時に作った、{' '}
               <ChakraLink href="https://chokokucad.itta.dev" target="_blank">
