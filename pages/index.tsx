@@ -7,6 +7,7 @@ import {
   VStack,
   Stack,
   HStack,
+  Link as ChakraLink,
 } from '@chakra-ui/react';
 import ContentGroup from 'components/ContentGroup';
 import Head from 'next/head';
@@ -108,11 +109,24 @@ const Home: FC = () => {
             </Stack>
           </ContentGroup>
           <ContentGroup title="What I am doing">
-            <Box>
+            <Text>
               既存のアプリケーションと大きく差別化を図るようなユーザー体験をつくっています。
               <br />
-              「一つのテーマを持って、それを作り続ける」ことも大切だと言われますが、せっかく私は学生なのですから、興味のある技術を手当たり次第に学ぶことにも重きを置いています。
-            </Box>
+              たとえば、僕が中学の時に作った、{' '}
+              <ChakraLink href="https://chokokucad.itta.dev" target="_blank">
+                Chokoku CAD
+              </ChakraLink>{' '}
+              という作品がありますが、これはモデリングソフトの複雑な機能とUIを一つの一般化されたものに置き換えて、直感的でありながら幅広い操作ができるようにするというものです。
+              <br />
+              僕はこの作品がきっかけでUIに興味を持つようになりました。
+              <br />
+            </Text>
+            <Text>
+              今も、同じコンセプトで LLM を使って複雑な GUI
+              を自然言語による指示に置き換えるようなアプリケーションを作っています。
+              <br />
+              ゆくゆくはこれをもう一度 Chokoku CAD に取り入れるというのが目標です。
+            </Text>
           </ContentGroup>
           <ContentGroup title="Certificates / Awards">
             <UnorderedList>
@@ -125,6 +139,9 @@ const Home: FC = () => {
             </UnorderedList>
           </ContentGroup>
           <ContentGroup title="Server Stats">
+            <Text>
+              自宅のラズパイクラスタサーバーの温度です。わざわざここに載せる意味は... 特にないです。
+            </Text>
             <HStack spacing={5}>
               {statsList &&
                 hosts.map((hostname) => (

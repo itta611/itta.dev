@@ -10,6 +10,12 @@ const theme = extendTheme({
         my: 2,
       },
     },
+    Link: {
+      baseStyle: {
+        color: 'teal.200',
+        textDecoration: 'underline',
+      },
+    },
   },
   config: {
     initialColorMode: 'dark',
