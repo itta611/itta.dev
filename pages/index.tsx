@@ -36,6 +36,8 @@ const Home: FC = () => {
   hosts.sort();
 
   useEffect(() => {
+    if (process.env.NODE_ENV === 'development') return;
+
     let timerId: NodeJS.Timeout;
 
     const fetchStats = async () => {
