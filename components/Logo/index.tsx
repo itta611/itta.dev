@@ -10,6 +10,7 @@ const Logo: FC<ChakraProps> = (props) => {
         <Player
           autoplay={true}
           loop={false}
+          keepLastFrame
           src="/lottie/kawaii-logo-hammer-shadow.json"
           style={{ height: '220px', width: '562.5px' }}
         ></Player>
@@ -19,6 +20,7 @@ const Logo: FC<ChakraProps> = (props) => {
         <Player
           autoplay={true}
           loop={false}
+          keepLastFrame
           src="/lottie/kawaii-logo-hammer.json"
           style={{ height: '220px', width: '562.5px' }}
         ></Player>
