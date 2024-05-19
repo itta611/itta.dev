@@ -108,7 +108,7 @@ const Home: FC = () => {
                   <HStack>
                     <IconBuilding size={18} />
                     <Text as="span" ml={2} textColor="white" fontSize="sm" fontWeight="semibold">
-                      Icihonomiya Sr. High
+                      Ichionomiya Sr. High
                     </Text>
                   </HStack>
                 </VStack>
