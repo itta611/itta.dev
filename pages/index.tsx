@@ -105,6 +105,12 @@ const Home: FC = () => {
                       TypeScript / React / Next.js / Blender
                     </Text>
                   </HStack>
+                  <HStack>
+                    <IconBuilding size={18} />
+                    <Text as="span" ml={2} textColor="white" fontSize="sm" fontWeight="semibold">
+                      Icihonomiya Sr. High
+                    </Text>
+                  </HStack>
                 </VStack>
               </Box>
               <DinamicShadowImage src="/img/icon.png" width={201} height={200} alt="Icon" />
