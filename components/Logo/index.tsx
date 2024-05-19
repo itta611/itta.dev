@@ -6,23 +6,21 @@ import LogoWithoutHammer from './LogoWithoutHammer';
 const Logo: FC<ChakraProps> = (props) => {
   return (
     <chakra.div position="relative" {...props}>
-      <chakra.div position="absolute" top={0} left={0}>
+      <chakra.div>
         <Player
           autoplay={true}
-          controls={true}
           loop={false}
           src="/lottie/kawaii-logo-hammer-shadow.json"
-          style={{ height: '176px', width: '450px' }}
+          style={{ height: '220px', width: '562.5px' }}
         ></Player>
       </chakra.div>
-      <LogoWithoutHammer />
+      <LogoWithoutHammer position="absolute" top={0} left={0} />
       <chakra.div position="absolute" top={0} left={0}>
         <Player
           autoplay={true}
-          controls={true}
           loop={false}
           src="/lottie/kawaii-logo-hammer.json"
-          style={{ height: '176px', width: '450px' }}
+          style={{ height: '220px', width: '562.5px' }}
         ></Player>
       </chakra.div>
     </chakra.div>
