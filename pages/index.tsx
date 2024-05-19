@@ -22,7 +22,6 @@ import {
   IconCode,
   IconHammer,
   IconHeartCode,
-  IconLocation,
   IconMapPin,
 } from '@tabler/icons-react';
 import DinamicShadowImage from 'components/DinamicShadowImage';
@@ -63,7 +62,7 @@ const Home: FC = () => {
           <meta name="description" content="Itta's Portfolio Site" />
         </Head>
         <Box display="flex" alignItems="center" as="header" mx={11} h={72}>
-          <Logo mx="auto" />
+          <Logo mx="auto" cursor="pointer" />
         </Box>
         <Box as="main" mt={9}>
           <ContentGroup title="About">
@@ -143,9 +142,7 @@ const Home: FC = () => {
             </UnorderedList>
           </ContentGroup>
           <ContentGroup title="Server Stats">
-            <Text>
-              自宅のラズパイクラスタサーバーの温度です。わざわざここに載せる意味は... 特にないです。
-            </Text>
+            <Text>おうちのラズパイクラスタサーバーの温度です。（リアルタイム更新）</Text>
             <HStack spacing={5}>
               {statsList &&
                 hosts.map((hostname) => (
