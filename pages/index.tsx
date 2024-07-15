@@ -83,7 +83,7 @@ const Home: FC = () => {
                   <HStack>
                     <IconCake size={18} />
                     <Text as="span" ml={2} textColor="white" fontSize="sm" fontWeight="semibold">
-                      2008/6/11 (15 さい)
+                      2008/6/11 (16 さい)
                     </Text>
                   </HStack>
                   <HStack>
@@ -128,7 +128,7 @@ const Home: FC = () => {
             </Text>
             <Text>
               今も、同じコンセプトで LLM を使って複雑な GUI
-              を自然言語による指示に置き換えるようなアプリケーションを作っています...
+              を自然言語によるインターフェースに置き換えるようなアプリケーションを作っています...
             </Text>
           </ContentGroup>
           <ContentGroup title="Certificates / Awards">
