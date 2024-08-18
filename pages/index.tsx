@@ -15,6 +15,7 @@ import Logo from 'components/Logo';
 import ListItemWrap from 'components/ListItemWrap';
 import Link from 'next/link';
 import {
+  IconBrandDiscordFilled,
   IconBrandGithub,
   IconBrandX,
   IconBuilding,
@@ -124,11 +125,11 @@ const Home: FC = () => {
                 Chokoku CAD
               </ChakraLink>{' '}
               という作品があります。一般的なモデリングソフトは非常に多くの機能を持っているので、それに伴いUIも複雑化します。
-              そこで、多くの機能を一つのシンプルな機能（削ること）に落とし込むことで、低い学習コストで従来と同じレベルの操作を可能にするというアイデアです。
+              そこで、多くの機能を一つのシンプルな機能（削ること）に落とし込むことで、低い学習コストと複雑な操作を同時に可能にするというアイデアです。
             </Text>
             <Text>
               今も、同じコンセプトで LLM を使って複雑な GUI
-              を自然言語によるインターフェースに置き換えるようなアプリケーションを作っています...
+              を自然言語ベースのUIに置き換えるようなアプリケーションを作っています...
             </Text>
           </ContentGroup>
           <ContentGroup title="Certificates / Awards">
@@ -164,6 +165,9 @@ const Home: FC = () => {
               </Link>
               <Link href="https://twitter.com/IttaFunahashi">
                 <Button leftIcon={<IconBrandX />}>Twitter(X): @IttaFunahashi</Button>
+              </Link>
+              <Link href="https://discord.gg/PRC7Wsy2">
+                <Button leftIcon={<IconBrandDiscordFilled />}>Discord: @itta.dev</Button>
               </Link>
               <Link href="https://github.com/itta611/itta.dev">
                 <Button leftIcon={<IconCode />}>Source Code</Button>
