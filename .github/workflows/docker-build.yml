@@ -2,7 +2,7 @@ name: Build and Push Docker Image
 
 on:
   push:
-    branches:
+    branches: [ main, dev ]
 
 jobs:
   build:
@@ -29,5 +29,26 @@ jobs:
         with:
           context: .
           push: true
-          tags: itta/itta.dev:${{ github.ref_name }}
+          tags: itta/itta.dev:${{ github.sha }}
           platforms: ${{ matrix.platform }}
+
+      - name: Clone k8s manifests repo
+        uses: actions/checkout@v2
+        with:
+          repository: itta611/k8s-configs
+          token: ${{ secrets.REPO_ACCESS_TOKEN }}
+          path: k8s-configs
+
+      - name: Update image tag in k8s manifest
+        run: |
+          yq e '.spec.template.spec.containers[0].image = "itta/itta.dev:${{ github.sha }}"' -i k8s-configs/itta-dev-${{ github.ref_name }}/deployment.yaml
+
+      - name: Commit and push changes
+        run: |
+          cd k8s-configs
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git add .
+          git commit -m "Update image tag to ${{ github.sha }}"
+          git push
+
