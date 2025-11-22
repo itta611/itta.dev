@@ -1,3 +1,12 @@
 {
-  "tailwindCSS.experimental.classRegex": []
+	"tailwindCSS.experimental.configFile": "packages/ui/src/styles/globals.css",
+	"editor.defaultFormatter": "biomejs.biome",
+	"tailwindCSS.classFunctions": ["cn", "cva"],
+	"[typescript]": {
+		"editor.defaultFormatter": "biomejs.biome"
+	},
+	"editor.codeActionsOnSave": {
+		"source.organizeImports.biome": "always"
+	},
+	"cSpell.words": ["Fliped", "Framebuffers", "mediump"]
 }
