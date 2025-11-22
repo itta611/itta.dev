@@ -3,7 +3,6 @@ import {
 	IconBrandGithub,
 	IconBrandX,
 } from "@tabler/icons-react";
-import { RefreshCcwIcon } from "lucide-react";
 import Link from "next/link";
 import Logo from "@/components/logo";
 import { Button } from "@/components/ui/button";
@@ -15,15 +14,7 @@ export default function Home() {
 			<div className="py-9 flex">
 				<Logo />
 			</div>
-			<div className="py-8 px-12 bg-gray-800 border rounded-2xl">
-				<AboutCard />
-				<div className="flex justify-end mt-8">
-					<Button size="lg">
-						<RefreshCcwIcon className="size-4" />
-						再表示
-					</Button>
-				</div>
-			</div>
+			<AboutCard />
 			<div className="absolute bottom-6 [&_button]:size-10 space-x-2">
 				<Link href="https://twitter.com/IttaFunahashi" target="_blank">
 					<Button>
