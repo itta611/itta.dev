@@ -6,8 +6,8 @@ interface Props {
 
 const LogoWithoutHammer: FC<Props> = ({ className }) => {
   return (
-    <svg width="562.5" height="220" viewBox="0 0 450 176" className={className}>
-      <desc>itta.dev</desc>
+    <svg viewBox="0 0 450 176" className={className}>
+      <title>itta.dev</title>
       <defs>
         <linearGradient
           id="_名称未設定グラデーション_44"

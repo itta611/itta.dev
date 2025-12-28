@@ -53,7 +53,7 @@ const Logo: FC = () => {
 			type="button"
 			onClick={handleClick}
 		>
-			<div ref={shadowContainerRef} className="w-full" />
+			<div ref={shadowContainerRef} className="w-full h-[140px]" />
 			<LogoWithoutHammer className="h-full absolute w-full top-0" />
 			<div className="w-full absolute top-0 left-0" ref={containerRef} />
 		</button>

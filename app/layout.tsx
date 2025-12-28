@@ -13,8 +13,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-	title: "itta.dev - いったのサイト",
-	description: "船橋一汰 / Itta Funahashi のWebサイト",
+	title: "Itta Funahashi / itta.dev",
+	description: "いったのWebサイト",
 };
 
 export default function RootLayout({
