@@ -8,12 +8,12 @@ const DinamicShadowImage: FC<ImageProps> = (props) => {
       <Image
         {...props}
         alt={props.alt ?? ""}
-        className="blur-sm opacity-30 scale-105 rounded-xl"
+        className="blur-sm opacity-30 scale-105 rounded-lg"
       />
       <Image
         {...props}
         alt={props.alt ?? ""}
-        className="absolute top-0 left-0 rounded-xl"
+        className="absolute top-0 left-0 rounded-lg"
       />
     </div>
   );

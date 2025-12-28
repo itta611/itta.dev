@@ -10,7 +10,11 @@ const Article: FC = () => {
   const [currentArticle, setCurrentArticle] = useState(articles[0]);
 
   const showRandomArticle = () => {
-    const randomIndex = Math.floor(Math.random() * articles.length);
+    if (currentArticle === articles[0]) {
+      setCurrentArticle(articles[1]);
+      return;
+    }
+    const randomIndex = Math.floor(Math.random() * (articles.length - 2) + 2);
     setCurrentArticle(articles[randomIndex]);
   };
 
