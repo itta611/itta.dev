@@ -1,23 +1,13 @@
-import { RefreshCcwIcon } from "lucide-react";
 import type { FC, ReactNode } from "react";
-import { Button } from "../ui/button";
 
 interface CardProps {
-	children: ReactNode;
+  children: ReactNode;
 }
 
 const Card: FC<CardProps> = ({ children }) => {
-	return (
-		<div className="py-8 px-12 bg-gray-800 border rounded-2xl">
-			{children}
-			<div className="flex justify-end mt-6">
-				<Button size="lg">
-					<RefreshCcwIcon className="size-4" />
-					わかった
-				</Button>
-			</div>
-		</div>
-	);
+  return (
+    <div className="py-8 px-12 bg-gray-800 border rounded-2xl">{children}</div>
+  );
 };
 
 export { Card };
