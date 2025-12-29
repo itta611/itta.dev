@@ -1,3 +1,4 @@
+import { IconHandStop } from "@tabler/icons-react";
 import type { FC } from "react";
 import DinamicShadowImage from "@/components/dinamic-shadow-image";
 
@@ -7,7 +8,7 @@ const Article003: FC = () => {
       <DinamicShadowImage
         src="/face.png"
         alt="顔の写真"
-        className="mx-auto mb-3"
+        className="mx-auto"
         width={180}
         height={180}
       />
@@ -20,4 +21,6 @@ export default Article003;
 
 export const metadata = {
   title: "顔",
+  button: "バイバイ",
+  buttonIcon: IconHandStop,
 };

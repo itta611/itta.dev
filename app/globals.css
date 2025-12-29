@@ -122,4 +122,7 @@
   html {
     @apply bg-gray-900;
   }
+  ul {
+    @apply list-disc list-inside;
+  }
 }

@@ -18,14 +18,16 @@ const Article: FC = () => {
     setCurrentArticle(articles[randomIndex]);
   };
 
+  const Icon = currentArticle.metadata.buttonIcon || RefreshCcwIcon;
+
   return (
     <Card>
       <CardTitle>{currentArticle.metadata.title}</CardTitle>
       <currentArticle.Component />
       <div className="flex justify-end mt-6">
         <Button size="lg" onClick={showRandomArticle}>
-          <RefreshCcwIcon className="size-4" />
-          わかった
+          <Icon className="size-4" />
+          {currentArticle.metadata?.button || "わかった"}
         </Button>
       </div>
     </Card>
