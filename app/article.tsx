@@ -1,10 +1,10 @@
 "use client";
 import { RefreshCcwIcon } from "lucide-react";
 import { type FC, useState } from "react";
+import { articles } from "@/articles";
 import { Card } from "@/components/card/card";
 import { CardTitle } from "@/components/card/card-title";
 import { Button } from "@/components/ui/button";
-import { articles } from "./articles";
 
 const Article: FC = () => {
   const [currentArticle, setCurrentArticle] = useState(articles[0]);
