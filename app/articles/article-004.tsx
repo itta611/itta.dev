@@ -1,15 +1,15 @@
 "use client";
 
-import { useState, type FC, type FormEvent } from "react";
+import { type FC, type FormEvent, useState } from "react";
 import Link from "@/components/link";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 
 const Article004: FC = () => {
   const [message, setMessage] = useState("");
-  const [status, setStatus] = useState<"idle" | "sending" | "success" | "error">(
-    "idle",
-  );
+  const [status, setStatus] = useState<
+    "idle" | "sending" | "success" | "error"
+  >("idle");
   const [errorMessage, setErrorMessage] = useState("");
 
   const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
@@ -51,23 +51,16 @@ const Article004: FC = () => {
 
   return (
     <div className="mt-2">
-      何でも聴くマンです。特に界隈曲と名のつくものは全部好きです。
-      界隈曲で一番好きなのはこれ →{" "}
-      <Link
-        href="https://youtu.be/ok7UX3utzvI?si=qYt6Tlqh9IaU1Zyx"
-        target="_blank"
-      >
-        .
-      </Link>
+      何でも聴きたいマンです。特に界隈曲と名のつくものは全部好きです。
       <div className="py-6">
         <div className="font-bold text-lg">曲をオススメする</div>
         <p className="text-gray-400 text-sm mt-0.5">
-          オススメの曲とかあったら教えて下さい。絶対聴きに行きます。あとミセス以外で。
+          ミセス以外でオススメの曲とかあったら教えて下さい。絶対聴きに行きます。
         </p>
         <form className="mt-3" onSubmit={handleSubmit}>
           <div className="flex">
             <Input
-              placeholder="曲名、YouTubeのURLなどを入力"
+              placeholder="曲名、YouTubeのURLなど"
               value={message}
               onChange={(event) => {
                 setMessage(event.target.value);
@@ -83,12 +76,10 @@ const Article004: FC = () => {
             </Button>
           </div>
           {status === "success" && (
-            <p className="text-sm text-green-500 mt-2">
-              送信しました。ありがとうございます！
-            </p>
+            <p className="text-sm text-green-400 mt-2">送信しました。</p>
           )}
           {status === "error" && (
-            <p className="text-sm text-red-500 mt-2">{errorMessage}</p>
+            <p className="text-sm text-red-400 mt-2">{errorMessage}</p>
           )}
         </form>
       </div>

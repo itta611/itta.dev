@@ -25,7 +25,7 @@ const Article: FC = () => {
       <CardTitle>{currentArticle.metadata.title}</CardTitle>
       <currentArticle.Component />
       <div className="flex justify-end mt-6">
-        <Button size="lg" onClick={showRandomArticle}>
+        <Button size="lg" variant="primary" onClick={showRandomArticle}>
           <Icon className="size-4" />
           {currentArticle.metadata?.button || "わかった"}
         </Button>
