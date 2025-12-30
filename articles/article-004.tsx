@@ -54,7 +54,7 @@ const Article004: FC = () => {
       <div className="mt-6 mb-2">
         <div className="font-bold text-lg">曲をオススメする</div>
         <p className="text-gray-400 text-sm mt-0.5">
-          ミセス以外でオススメの曲とかあったら教えて下さい。絶対聴きに行きます。
+          ミセス以外でオススメの曲とかあったら教えて下さい。聴きに行きます。
         </p>
         <form className="mt-3" onSubmit={handleSubmit}>
           <div className="flex">
