@@ -1,6 +1,6 @@
 import { AwardIcon, CakeIcon, HammerIcon, MapPinIcon } from "lucide-react";
-import Image from "next/image";
 import { type FC, Fragment } from "react";
+import DinamicShadowImage from "@/components/dinamic-shadow-image";
 
 const Article001: FC = () => {
   const birthday = new Date(2008, 5, 11);
@@ -23,11 +23,11 @@ const Article001: FC = () => {
     },
     {
       icon: AwardIcon,
-      text: "2025 未踏ジュニア 採択\n2021 U-22 プログラミング・コンテスト 経済産業大臣賞\n2020 U-22 プログラミング・コンテスト 経済産業省商務政策局長賞",
+      text: "2025 未踏ジュニア スーパークリエイタ\n2021 U-22 プログラミング・コンテスト 経済産業大臣賞\n2020 U-22 プログラミング・コンテスト 経済産業省商務政策局長賞",
     },
   ];
   return (
-    <div className="flex justify-between items-start">
+    <div className="flex justify-between md:items-start max-md:flex-col-reverse items-center">
       <div className="flex flex-col">
         <span className="font-bold mb-6 text-lg">
           船橋一汰 / Itta Funahashi{" "}
@@ -44,12 +44,12 @@ const Article001: FC = () => {
           ))}
         </div>
       </div>
-      <Image
+      <DinamicShadowImage
         src="/icon.png"
         alt="Icon"
         height={512}
         width={512}
-        className="w-56 h-56 -m-6.5 -mt-8"
+        className="w-56 h-56"
       />
     </div>
   );

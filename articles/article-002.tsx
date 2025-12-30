@@ -21,7 +21,7 @@ const Article002: FC = () => {
   ];
 
   return (
-    <div className="flex items-start gap-8">
+    <div className="flex max-md:flex-col items-start gap-8">
       {works.map((work) => (
         <div className="basis-0 grow" key={work.title}>
           <Image
