@@ -2,7 +2,20 @@ import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
   images: {
-    remotePatterns: [new URL("https://yt3.googleusercontent.com/**")],
+    remotePatterns: [
+      {
+        protocol: "https",
+        hostname: "static.sizu.me",
+        port: "",
+        pathname: "/**",
+      },
+      {
+        protocol: "https",
+        hostname: "assets.st-note.com",
+        port: "",
+        pathname: "/**",
+      },
+    ],
   },
 };
 

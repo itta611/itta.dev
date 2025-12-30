@@ -29,9 +29,9 @@ const Article001: FC = () => {
   return (
     <div className="flex justify-between items-start">
       <div className="flex flex-col">
-        <span className="font-bold mb-6 text-xl">
+        <span className="font-bold mb-6 text-lg">
           船橋一汰 / Itta Funahashi{" "}
-          <span className="text-slate-400 text-lg">(@itta611)</span>
+          <span className="text-slate-400 text-base">(@itta611)</span>
         </span>
         <div className="grid grid-cols-[auto_1fr] gap-x-3 gap-y-4 text-sm">
           {AboutItems.map((item) => (

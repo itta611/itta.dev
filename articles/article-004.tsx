@@ -1,7 +1,6 @@
 "use client";
 
 import { type FC, type FormEvent, useState } from "react";
-import Link from "@/components/link";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 
