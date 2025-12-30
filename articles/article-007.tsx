@@ -18,6 +18,7 @@ const Article007: FC = () => {
           ）
         </li>
       </ul>
+      などなど
     </div>
   );
 };
