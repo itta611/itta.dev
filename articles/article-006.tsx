@@ -56,7 +56,7 @@ const Article006: FC = () => {
 
   return (
     <div>
-      <div className="flex gap-6 flex-wrap">
+      <div className="flex gap-x-6 overflow-x-scroll scrollbar-thin scrollbar-track-[transparent] scrollbar-thumb-white/20 pb-2">
         {articles.slice(0, 5).map((article) => (
           <ArticleItem key={article.url} article={article} />
         ))}
