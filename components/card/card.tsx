@@ -1,12 +1,17 @@
-import type { FC, ReactNode } from "react";
+import type { FC, HTMLAttributes, ReactNode } from "react";
 
-interface CardProps {
+interface CardProps extends HTMLAttributes<HTMLDivElement> {
   children: ReactNode;
 }
 
-const Card: FC<CardProps> = ({ children }) => {
+const Card: FC<CardProps> = ({ children, className, ...props }) => {
   return (
-    <div className="py-8 px-12 bg-gray-800 border rounded-2xl">{children}</div>
+    <div
+      className={`py-8 px-12 bg-gray-800 border rounded-2xl ${className}`}
+      {...props}
+    >
+      {children}
+    </div>
   );
 };
 
