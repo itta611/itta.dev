@@ -31,7 +31,7 @@ const Article: FC = () => {
   const Icon = currentArticle.metadata.buttonIcon || RefreshCcwIcon;
 
   useEffect(() => {
-    setCardHeight(cardInnerRef.current?.offsetHeight + 64 || 0);
+    setCardHeight((cardInnerRef.current?.offsetHeight || 0) + 64);
   }, [currentArticleIndex]);
 
   return (
