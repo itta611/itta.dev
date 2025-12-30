@@ -7,16 +7,24 @@ import { CardTitle } from "@/components/card/card-title";
 import { Button } from "@/components/ui/button";
 
 const Article: FC = () => {
-  const [currentArticle, setCurrentArticle] = useState(articles[0]);
+  const [currentArticleIndex, setCurrentArticleIndex] = useState(0);
 
   const showRandomArticle = () => {
-    if (currentArticle === articles[0]) {
-      setCurrentArticle(articles[1]);
+    if (currentArticleIndex === 0) {
+      setCurrentArticleIndex(1);
       return;
     }
-    const randomIndex = Math.floor(Math.random() * (articles.length - 2) + 2);
-    setCurrentArticle(articles[randomIndex]);
+    const randomIndex = Math.floor(
+      Math.random() * (articles.length - 2 - 1) + 2,
+    );
+    if (randomIndex >= currentArticleIndex) {
+      setCurrentArticleIndex(randomIndex + 1);
+    } else {
+      setCurrentArticleIndex(randomIndex);
+    }
   };
+
+  const currentArticle = articles[currentArticleIndex];
 
   const Icon = currentArticle.metadata.buttonIcon || RefreshCcwIcon;
 
