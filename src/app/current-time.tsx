@@ -16,10 +16,7 @@ export default function CurrentTime() {
   const [now, setNow] = useState<Date | null>(null);
 
   useEffect(() => {
-    const update = () => setNow(new Date());
-    update();
-    const timer = window.setInterval(update, 1000);
-    return () => window.clearInterval(timer);
+    setNow(new Date());
   }, []);
 
   return (
