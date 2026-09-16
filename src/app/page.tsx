@@ -1,6 +1,7 @@
 import Image from "next/image";
 import { Fragment } from "react";
 import CurrentTime from "./current-time";
+import Referrer from "./referrer";
 
 const links = [
   { name: "X", label: "@IttaFunahashi", href: "https://x.com/IttaFunahashi" },
@@ -50,7 +51,7 @@ export default function Home() {
             <p>ID #: 82</p>
             <CurrentTime />
           </div>
-          <p className="text-right">Refferer: x.com</p>
+          <Referrer />
         </div>
 
         <Divider />
@@ -61,7 +62,7 @@ export default function Home() {
         >
           <Image
             src="/images/itta-portrait.png"
-            alt="白黒のドットで描かれたプロフィールイラスト"
+            alt="アイコン"
             width={234}
             height={214}
             preload
