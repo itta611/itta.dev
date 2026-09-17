@@ -141,6 +141,13 @@ export default function Home() {
             <dd className="flex items-center font-[family-name:var(--font-biz-ud-gothic)] text-[16px] leading-5 sm:text-[24px] sm:leading-[28px]">
               誕生
             </dd>
+            <dt>2020</dt>
+            <dd className="text-[16px] leading-5 sm:text-[24px] sm:leading-[28px]">
+              <span className="text-[18px] leading-[22px] sm:text-[28px] sm:leading-[32px]">
+                U-22{" "}
+              </span>
+              プログラミング・コンテスト 経済産業省商務政策局長賞
+            </dd>
             <dt>2021</dt>
             <dd className="text-[16px] leading-5 sm:text-[24px] sm:leading-[28px]">
               <span className="text-[18px] leading-[22px] sm:text-[28px] sm:leading-[32px]">
@@ -151,10 +158,6 @@ export default function Home() {
             <dt>2025</dt>
             <dd className="flex items-center font-['Arial_Narrow',Arial,sans-serif] text-[16px] leading-5 sm:text-[24px] sm:leading-[28px]">
               未踏ジュニア スーパークリエータ認定
-            </dd>
-            <dt>2027</dt>
-            <dd className="flex items-center font-['Arial_Narrow',Arial,sans-serif] text-[16px] leading-5 sm:text-[24px] sm:leading-[28px]">
-              慶応義塾大学 環境情報学部入学
             </dd>
           </dl>
         </section>
