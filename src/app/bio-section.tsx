@@ -1,0 +1,82 @@
+"use client";
+
+import { useState } from "react";
+
+function BioItem({
+  year,
+  description,
+  failed = false,
+}: {
+  year: number;
+  description: string;
+  failed?: boolean;
+}) {
+  return (
+    <>
+      <dt className={failed ? "opacity-70" : undefined}>{year}</dt>
+      <dd className={failed ? "opacity-70" : undefined}>{description}</dd>
+    </>
+  );
+}
+
+export default function BioSection() {
+  const [showFailures, setShowFailures] = useState(false);
+
+  return (
+    <section aria-labelledby="bio-heading" className="flex flex-col gap-5 py-8">
+      <div className="relative flex items-center justify-center">
+        <h2
+          id="bio-heading"
+          className="bg-black p-1 text-center text-white sm:w-[49px]"
+        >
+          Bio
+        </h2>
+        <label className="absolute right-0 flex cursor-pointer items-center gap-[10px] text-[16px] leading-5 sm:w-[94px] sm:text-[24px] sm:leading-[28px]">
+          <input
+            type="checkbox"
+            checked={showFailures}
+            onChange={(event) => setShowFailures(event.target.checked)}
+            className="peer sr-only"
+          />
+          <svg
+            aria-hidden="true"
+            viewBox="0 0 18 18"
+            fill="none"
+            className="size-[14px] shrink-0 peer-focus-visible:outline-2 peer-focus-visible:outline-offset-4 sm:size-[18px]"
+          >
+            <rect
+              x="1"
+              y="1"
+              width="16"
+              height="16"
+              stroke="currentColor"
+              strokeWidth="2"
+            />
+            {showFailures ? (
+              <path d="m4 9 3 3 7-7" stroke="currentColor" strokeWidth="2" />
+            ) : null}
+          </svg>
+          Failed
+        </label>
+      </div>
+      <dl className="grid grid-cols-[max-content_minmax(0,1fr)] gap-3 sm:grid-cols-[63px_minmax(0,1fr)]">
+        <BioItem year={2008} description="誕生" />
+        {showFailures ? (
+          <BioItem year={2019} description="IPA未到事業不採択" failed />
+        ) : null}
+        <BioItem
+          year={2020}
+          description="U-22 プログラミング・コンテスト 経済産業省商務政策局長賞"
+        />
+        <BioItem
+          year={2021}
+          description="U-22 プログラミング・コンテスト 経済産業大臣賞"
+        />
+        <BioItem
+          year={2025}
+          description="未踏ジュニア スーパークリエータ認定"
+        />
+      </dl>
+    </section>
+  );
+}
