@@ -1,7 +1,6 @@
 import Image from "next/image";
 import { Fragment } from "react";
 import CurrentTime from "./current-time";
-import Referrer from "./referrer";
 
 const links = [
   { name: "X", label: "@IttaFunahashi", href: "https://x.com/IttaFunahashi" },
@@ -46,12 +45,9 @@ export default function Home() {
 
         <Divider />
 
-        <div className="flex flex-col gap-2 py-5 text-[16px] leading-5 min-[400px]:text-[18px] min-[400px]:leading-[22px] sm:px-5 sm:text-[28px] sm:leading-[32px]">
-          <div className="flex justify-between gap-2 whitespace-nowrap">
-            <p>ID #: 82</p>
-            <CurrentTime />
-          </div>
-          <Referrer />
+        <div className="flex justify-between gap-2 py-5 text-[16px] leading-5 whitespace-nowrap min-[400px]:text-[18px] min-[400px]:leading-[22px] sm:px-5 sm:text-[28px] sm:leading-[32px]">
+          <p>ID #: 82</p>
+          <CurrentTime />
         </div>
 
         <Divider />
