@@ -136,27 +136,23 @@ export default function Home() {
               Failed
             </span>
           </div>
-          <dl className="grid grid-cols-[max-content_minmax(0,1fr)] gap-3 sm:grid-cols-[63px_minmax(0,1fr)] sm:grid-rows-[32px_60px_32px_32px]">
+          <dl className="grid grid-cols-[max-content_minmax(0,1fr)] gap-3 sm:grid-cols-[63px_minmax(0,1fr)]">
             <dt>2008</dt>
-            <dd className="flex items-center font-[family-name:var(--font-biz-ud-gothic)] text-[16px] leading-5 sm:text-[24px] sm:leading-[28px]">
+            <dd>
               誕生
             </dd>
             <dt>2020</dt>
-            <dd className="text-[16px] leading-5 sm:text-[24px] sm:leading-[28px]">
-              <span className="text-[18px] leading-[22px] sm:text-[28px] sm:leading-[32px]">
-                U-22{" "}
-              </span>
+            <dd >
+              U-22{" "}
               プログラミング・コンテスト 経済産業省商務政策局長賞
             </dd>
             <dt>2021</dt>
-            <dd className="text-[16px] leading-5 sm:text-[24px] sm:leading-[28px]">
-              <span className="text-[18px] leading-[22px] sm:text-[28px] sm:leading-[32px]">
-                U-22{" "}
-              </span>
+            <dd >
+              U-22{" "}
               プログラミング・コンテスト 経済産業大臣賞
             </dd>
             <dt>2025</dt>
-            <dd className="flex items-center font-['Arial_Narrow',Arial,sans-serif] text-[16px] leading-5 sm:text-[24px] sm:leading-[28px]">
+            <dd>
               未踏ジュニア スーパークリエータ認定
             </dd>
           </dl>
