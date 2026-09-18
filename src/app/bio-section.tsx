@@ -59,7 +59,7 @@ export default function BioSection() {
           Failed
         </label>
       </div>
-      <dl className="grid grid-cols-[max-content_minmax(0,1fr)] gap-3 sm:grid-cols-[63px_minmax(0,1fr)]">
+      <dl className="grid grid-cols-[max-content_minmax(0,1fr)] gap-3 sm:grid-cols-[63px_minmax(0,1fr)] text-[24px]">
         <BioItem year={2008} description="誕生" />
         <BioItem
           year={2020}
@@ -70,20 +70,20 @@ export default function BioSection() {
           description="U-22 プログラミング・コンテスト 経済産業大臣賞"
         />
         {showFailures ? (
-          <BioItem year={2021} description="未踏人材育成事業 二次落ち" failed />
+          <BioItem year={2022} description="未踏IT人材発掘・育成事業 二次不採択" failed />
         ) : null}
         {showFailures ? (
-          <BioItem year={2021} description="孫正義育英財団 二次落ち" failed />
+          <BioItem year={2022} description="孫正義育英財団 二次選考不合格" failed />
         ) : null}
         {showFailures ? (
-          <BioItem year={2026} description="孫正義育英財団 書類落ち" failed />
+          <BioItem year={2025} description="未踏IT人材発掘・育成事業 書類不採択" failed />
         ) : null}
         <BioItem
           year={2025}
           description="未踏ジュニア スーパークリエータ認定"
         />
         {showFailures ? (
-          <BioItem year={2025} description="未踏人材育成事業 書類落ち" failed />
+          <BioItem year={2026} description="孫正義育英財団 一次選考不合格" failed />
         ) : null}
       </dl>
     </section>
