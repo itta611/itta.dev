@@ -13,8 +13,8 @@ function BioItem({
 }) {
   return (
     <>
-      <dt className={failed ? "opacity-70" : undefined}>{year}</dt>
-      <dd className={failed ? "opacity-70" : undefined}>{description}</dd>
+      <dt className={failed ? "opacity-50" : undefined}>{year}</dt>
+      <dd className={failed ? "opacity-50" : undefined}>{description}</dd>
     </>
   );
 }
@@ -61,9 +61,6 @@ export default function BioSection() {
       </div>
       <dl className="grid grid-cols-[max-content_minmax(0,1fr)] gap-3 sm:grid-cols-[63px_minmax(0,1fr)]">
         <BioItem year={2008} description="誕生" />
-        {showFailures ? (
-          <BioItem year={2019} description="IPA未到事業不採択" failed />
-        ) : null}
         <BioItem
           year={2020}
           description="U-22 プログラミング・コンテスト 経済産業省商務政策局長賞"
@@ -72,10 +69,22 @@ export default function BioSection() {
           year={2021}
           description="U-22 プログラミング・コンテスト 経済産業大臣賞"
         />
+        {showFailures ? (
+          <BioItem year={2021} description="未踏人材育成事業 二次落ち" failed />
+        ) : null}
+        {showFailures ? (
+          <BioItem year={2021} description="孫正義育英財団 二次落ち" failed />
+        ) : null}
+        {showFailures ? (
+          <BioItem year={2026} description="孫正義育英財団 書類落ち" failed />
+        ) : null}
         <BioItem
           year={2025}
           description="未踏ジュニア スーパークリエータ認定"
         />
+        {showFailures ? (
+          <BioItem year={2025} description="未踏人材育成事業 書類落ち" failed />
+        ) : null}
       </dl>
     </section>
   );
