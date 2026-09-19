@@ -31,13 +31,9 @@ export default function BioSection() {
         >
           Bio
         </h2>
-        <label className="absolute right-0 flex cursor-pointer items-center gap-[10px] text-[16px] leading-5 sm:w-[94px] sm:text-[24px] sm:leading-[28px]">
-          <input
-            type="checkbox"
-            checked={showFailures}
-            onChange={(event) => setShowFailures(event.target.checked)}
-            className="peer sr-only"
-          />
+        <button
+          onClick={() => setShowFailures(!showFailures)}
+          className="absolute right-0 flex cursor-pointer items-center gap-[10px] text-[16px] leading-5 sm:w-[94px] sm:text-[24px] sm:leading-[28px]">
           <svg
             aria-hidden="true"
             viewBox="0 0 18 18"
@@ -57,7 +53,7 @@ export default function BioSection() {
             ) : null}
           </svg>
           Failed
-        </label>
+        </button>
       </div>
       <dl className="grid grid-cols-[max-content_minmax(0,1fr)] gap-3 sm:grid-cols-[63px_minmax(0,1fr)] sm:text-[24px]">
         <BioItem year={2008} description="誕生" />
