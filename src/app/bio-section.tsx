@@ -59,7 +59,7 @@ export default function BioSection() {
           Failed
         </label>
       </div>
-      <dl className="grid grid-cols-[max-content_minmax(0,1fr)] gap-3 sm:grid-cols-[63px_minmax(0,1fr)] size:text-[24px]">
+      <dl className="grid grid-cols-[max-content_minmax(0,1fr)] gap-3 sm:grid-cols-[63px_minmax(0,1fr)] sm:text-[24px]">
         <BioItem year={2008} description="誕生" />
         <BioItem
           year={2020}
