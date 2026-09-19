@@ -1,21 +1,13 @@
-"use client";
+import { Redis } from "@upstash/redis";
+import { connection } from "next/server";
 
-import { useEffect, useRef, useState } from "react";
+export default async function VisitCounter() {
+  await connection();
 
-export default function VisitCounter() {
-  const [count, setCount] = useState<number | string>("…");
-  const request = useRef<Promise<number> | null>(null);
-
-  useEffect(() => {
-    request.current ??= fetch("/api/visits", { method: "POST" }).then(
-      async (response) => {
-        if (!response.ok) throw new Error("Failed to record visit");
-        const data: { count: number } = await response.json();
-        return data.count;
-      },
-    );
-    request.current.then(setCount).catch(() => setCount("—"));
-  }, []);
+  const redis = Redis.fromEnv({ retry: false });
+  const count = await redis.incr(
+    `itta.dev:visits:${process.env.VERCEL_ENV ?? "development"}`,
+  );
 
   return <p>ID #: {count}</p>;
 }
