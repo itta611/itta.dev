@@ -6,7 +6,6 @@ export default function ProfileSection() {
       aria-labelledby="profile-name"
       className="flex flex-col items-center gap-5 py-8 text-center"
     >
-      <ProfileModel />
       <div className="flex flex-col items-center gap-3">
         <h1
           id="profile-name"
@@ -18,6 +17,7 @@ export default function ProfileSection() {
           Student, Frontend Engineer, UI Designer
         </p>
       </div>
+      <ProfileModel />
     </section>
   );
 }

@@ -75,6 +75,7 @@ export default function ProfileModel() {
     controls.autoRotateSpeed = 3;
     controls.enableDamping = true;
     controls.enablePan = false;
+    controls.maxPolarAngle = Math.PI / 2;
     controls.enableZoom = false;
     let disposed = false;
 
