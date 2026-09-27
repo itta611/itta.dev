@@ -1,4 +1,4 @@
-import Image from "next/image";
+import ProfileModel from "./profile-model";
 
 export default function ProfileSection() {
   return (
@@ -6,15 +6,7 @@ export default function ProfileSection() {
       aria-labelledby="profile-name"
       className="flex flex-col items-center gap-5 py-8 text-center"
     >
-      <Image
-        src="/images/itta-portrait.png"
-        alt="アイコン"
-        width={234}
-        height={214}
-        preload
-        unoptimized
-        className="h-[214px] w-[234px] object-cover"
-      />
+      <ProfileModel />
       <div className="flex flex-col items-center gap-3">
         <h1
           id="profile-name"
