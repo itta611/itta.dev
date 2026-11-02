@@ -60,7 +60,7 @@ export default function LinksSection() {
         />
         <LinkItem
           name="LinkedIn"
-          label="itta"
+          label="@itta"
           href="https://www.linkedin.com/in/itta/"
         />
         <LinkItem name="Email" label="me@itta.dev" href="mailto:me@itta.dev" />
