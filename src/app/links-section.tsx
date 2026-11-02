@@ -49,6 +49,11 @@ export default function LinksSection() {
           href="https://x.com/IttaFunahashi"
         />
         <LinkItem
+          name="LinkedIn"
+          label="@itta"
+          href="https://www.linkedin.com/in/itta"
+        />
+        <LinkItem
           name="GitHub"
           label="@itta611"
           href="https://github.com/itta611"
